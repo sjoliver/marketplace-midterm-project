@@ -5,7 +5,7 @@ LHL Node Skeleton
 
 The following steps are only for _one_ of the group members to perform.
 
-Time for a merge conflict! 
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 
 
 1. Create your own copy of this repo using the `Use This Template` button, ideally using the name of your project. The repo should be marked Public
