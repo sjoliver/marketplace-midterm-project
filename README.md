@@ -11,6 +11,7 @@ The following steps are only for _one_ of the group members to perform.
 4. Add your team members as collaborators to the project so that they can push to this repo
 5. Let your team members know the repo URL so that they use the same repo (they should _not_ create a copy/fork of this repo since that will add additional workflow complexity to the project)
 
+- hello this is sophie!!!
 
 ## Getting Started
 
