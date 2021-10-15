@@ -5,6 +5,9 @@ LHL Node Skeleton
 
 The following steps are only for _one_ of the group members to perform.
 
+Time for a merge conflict! 
+
+
 1. Create your own copy of this repo using the `Use This Template` button, ideally using the name of your project. The repo should be marked Public
 2. Verify that the skeleton code now shows up in your repo on GitHub, you should be automatically redirected
 3. Clone your copy of the repo to your dev machine
