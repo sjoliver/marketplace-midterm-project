@@ -3,6 +3,8 @@ LHL Node Skeleton
 
 ## Project Setup
 
+hello world this is Cynthia !
+
 The following steps are only for _one_ of the group members to perform.
 
 Time for a merge conflict!!!
