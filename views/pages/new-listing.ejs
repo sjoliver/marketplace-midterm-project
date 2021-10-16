@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/_head') %>
+</head>
+
+<body>
+  <header>
+    <%- include('../partials/_header') %>
+  </header>
+
+  <main>
+    <form action="/" method="POST" id="new-listing-form">
+      <div class="new-listing-form-wrapper">
+        <label>Title</label>
+        <textarea id="listing-form-description" cols="30" rows="10"></textarea>
+      </div>
+
+      <div>
+        <label>Asking Price</label>
+        <input type="number" id="listing-form-price">
+      </div>
+
+      <div>
+        <label>Number of Bedrooms</label>
+        <input type="number" id="listing-form-bedrooms">
+
+        <label>Number of Bathrooms</label>
+        <input type="number" id="listing-form-bathrooms">
+      </div>
+
+      <div>
+        <label>Square Inches</label>
+        <input type="number" id="listing-form-sqr-inches">
+      </div>
+
+      <div>
+        <label>Address</label>
+        <input type="street" placeholder="Street">
+        <input type="city" placeholder="City">
+        <input type="state" placeholder="Province">
+        <input type="postal-code" placeholder="Postal Code">
+        <input type="county" placeholder="County">
+        <input type="country" placeholder="Country">
+      </div>
+
+      <div>
+        <label for="thumbnail">Select a thumbnail:</label>
+        <input type="file" id="thumbnail" name="thumbnail" accept="image/png, image/jpeg">
+
+        <label for="thumbnail">Select a main image:</label>
+        <input type="file" id="main-image" name="main-image" accept="image/png, image/jpeg">
+      </div>
+
+    </form>
+
+  </main>
+
+<footer>
+  <%- include('../partials/_footer') %>
+</footer>
+
+</body>
+
+</html>
