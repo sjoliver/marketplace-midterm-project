@@ -2,6 +2,14 @@
 
 ## Front-End
 - Views - Setup EJS pages (html files with alligator clips)
+  - index (shows the listings)
+    - favourites (show)
+    - my listings (show)
+    - purchases (show)
+  - listing details (show)
+  - new listing (form for submitting a new listing) (create)
+  - messages index (read)
+  - new message (create)
 - Views - Setup partials (html that is displayed on multiple pages, like the nav)
 - Styles - SCSS/SASS 
 - Public - scripts (JS) files (event-handlers) AND index.html file 
