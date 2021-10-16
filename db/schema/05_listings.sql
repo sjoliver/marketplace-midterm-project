@@ -1,0 +1,21 @@
+DROP TABLE IF EXISTS listings CASCADE;
+
+CREATE TABLE listings (
+  id SERIAL PRIMARY KEY NOT NULL,
+  seller_id INTEGER REFERENCES users(id),
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  num_of_bedrooms INTEGER NOT NULL DEFAULT 0,
+  num_of_bathrooms INTEGER NOT NULL DEFAULT 0,
+  sqr_inches INTEGER NOT NULL DEFAULT 0,
+  country VARCHAR(255) NOT NULL,
+  province VARCHAR(255) NOT NULL,
+  post_code VARCHAR(255) NOT NULL,
+  street VARCHAR(255) NOT NULL,
+  city VARCHAR(255) NOT NULL,
+  asking_price INTEGER NOT NULL DEFAULT 0,
+  image_thumbnail VARCHAR(255) NOT NULL,
+  image VARCHAR(255) NOT NULL,
+  created_at DATE NOT NULL,
+  available BOOLEAN NOT NULL DEFAULT TRUE
+);
