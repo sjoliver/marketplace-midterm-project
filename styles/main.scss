@@ -2,16 +2,16 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: rgb(163, 208, 219);
-  background: linear-gradient(
-    227deg,
-    rgb(255, 255, 255) 0%,
-    rgb(255, 255, 255) 20%,
-    rgb(255, 255, 255) 34%,
-    rgb(58, 59, 59) 59%,
-    rgb(0, 0, 0) 74%,
-    rgb(0, 0, 0) 100%
-  );
+  background: #FFFFFF;
+  // background: linear-gradient(
+  //   227deg,
+  //   rgb(255, 255, 255) 0%,
+  //   rgb(255, 255, 255) 20%,
+  //   rgb(255, 255, 255) 34%,
+  //   rgb(58, 59, 59) 59%,
+  //   rgb(0, 0, 0) 74%,
+  //   rgb(0, 0, 0) 100%
+  // );
 }
 
 nav {

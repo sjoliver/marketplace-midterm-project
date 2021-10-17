@@ -23,7 +23,8 @@ db.connect(error => {
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan("dev"));
 
-app.set("view engine", "ejs");
+app.set('view engine', "ejs");
+app.set('views');
 app.use(express.urlencoded({ extended: true }));
 
 app.use(
@@ -56,6 +57,9 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+app.get('/messages', (req, res) => {
+  res.render('pages/messages');
+})
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
