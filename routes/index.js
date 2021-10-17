@@ -1,10 +1,9 @@
 const express = require('express');
 const router  = express.Router();
+const listings_controller = require('../controllers/listingsController');
 
 
-module.exports = (db) => {
-  router.get("/", (req, res) => {
-    res.render("pages/index");
-  });
-return router;
-};
+
+router.get("/", listings_controller.index);
+
+module.exports = router;

@@ -32,6 +32,19 @@ User.getAll = result => {
   });
 };
 
+User.countAll = result => {
+  sql.query("SELECT count(*) FROM users", (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+      return;
+    }
+
+    console.log("users: ", res);
+    result(null, res);
+  });
+};
+
 
 User.findById = (userId, result) => {
   sql.query(`SELECT * FROM users WHERE id = ${userId}`, (err, res) => {
