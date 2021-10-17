@@ -19,6 +19,19 @@ User.create = (newUser, result) => {
   });
 };
 
+User.getAll = result => {
+  sql.query("SELECT * FROM users", (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+      return;
+    }
+
+    console.log("users: ", res);
+    result(null, res);
+  });
+};
+
 
 User.findById = (userId, result) => {
   sql.query(`SELECT * FROM users WHERE id = ${userId}`, (err, res) => {
@@ -38,3 +51,5 @@ User.findById = (userId, result) => {
     result({ kind: "not_found" }, null);
   });
 };
+
+module.exports = User;
