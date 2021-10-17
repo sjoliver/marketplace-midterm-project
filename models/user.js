@@ -32,6 +32,7 @@ User.getAll = result => {
   });
 };
 
+
 User.countAll = result => {
   sql.query("SELECT count(*) FROM users", (err, res) => {
     if (err) {

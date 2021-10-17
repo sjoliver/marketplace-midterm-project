@@ -38,6 +38,17 @@ exports.findAll = (req, res) => {
   });
 };
 
+exports.countAll = (req, res) => {
+  User.countAll((err, data) => {
+    if (err)
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving users."
+      });
+    else res.send(data);
+  });
+};
+
 exports.findOne = (req, res) => {
   User.findById(req.params.userId, (err, data) => {
     if (err) {

@@ -3,7 +3,7 @@ const router  = express.Router();
 const users_controller = require('../controllers/usersController');
 
 
-router.get("/", users_controller.findAll);
+router.get("/", users_controller.countAll);
 
 router.get("/:userId", users_controller.findOne);
 
