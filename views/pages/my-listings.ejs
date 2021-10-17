@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/_head') %>
+</head>
+
+<body>
+  <nav>
+    <%- include('../partials/_navbar'); %>
+  </nav>
+
+  <main class="main-container">
+    <div class="create-listing-button">
+      <form action="/new-listing" method="GET">
+        <button type="button">Create Listing</button>
+      </form>
+    </div>
+    <%- include('../partials/_filter-box') %>
+    <%- include('../partials/_listings') %>
+  </main>
+
+<footer>
+  <%- include('../partials/_footer') %>
+</footer>
+
+</body>
+
+</html>

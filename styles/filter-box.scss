@@ -1,0 +1,22 @@
+.filter {
+  display: flex;
+  justify-content: center;
+}
+
+.filter-box {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(58, 58, 223);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.filter-label {
+  color: rgb(230, 240, 230);
+  font-size: 36px;
+}
+
+.price-filter-label {
+  color: rgb(230, 240, 230);
+  font-size: 24px;
+}
