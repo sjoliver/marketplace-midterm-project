@@ -7,7 +7,7 @@
 
 <body>
   <header>
-    <%- include('../partials/_header') %>
+    <%- include('../partials/_navbar') %>
   </header>
 
   <main>
@@ -45,11 +45,11 @@
         <input type="country" placeholder="Country">
       </div>
 
-      <div>
-        <label for="thumbnail">Select a thumbnail:</label>
+      <div class="listing-images">
+        <label for="thumbnail">Thumbnail image:</label>
         <input type="file" id="thumbnail" name="thumbnail" accept="image/png, image/jpeg">
 
-        <label for="thumbnail">Select a main image:</label>
+        <label for="main-image">Main image:</label>
         <input type="file" id="main-image" name="main-image" accept="image/png, image/jpeg">
       </div>
 
