@@ -1,0 +1,32 @@
+.new-message-form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.new-message-button {
+  text-align: center;
+}
+
+.new-message-subject {
+  margin-top: 10px;
+}
+
+.new-message-body {
+  margin-top: 10px;
+}
+
+.form-subject {
+ text-align: center;
+ margin-top: 50px;
+ margin-bottom: 50px;
+}
+
+.form-body {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+label {
+  display: block;
+}
