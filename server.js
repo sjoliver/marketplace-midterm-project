@@ -13,7 +13,10 @@ const morgan = require("morgan");
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
 const db = new Pool(dbParams);
-db.connect();
+db.connect(error => {
+  if (error) throw error;
+  console.log("Server also connected");
+});
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -45,7 +48,7 @@ const widgetsRoutes = require("./routes/widgets");
 // Note: Feel free to replace the example routes below with your own
 app.use("/", indexRoutes(db));
 app.use("/listings/", listingsRoute(db));
-app.use("/api/users/", usersRoutes(db));
+app.use("/users/", usersRoutes);
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
