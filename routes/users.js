@@ -3,12 +3,12 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    let query = `SELECT * FROM widgets`;
+    let query = `SELECT * FROM users`;
     console.log(query);
     db.query(query)
       .then(data => {
-        const widgets = data.rows;
-        res.render( "pages/index", { widgets });
+        const users = data.rows;
+        res.render( "pages/index", { users });
       })
       .catch(err => {
         res
