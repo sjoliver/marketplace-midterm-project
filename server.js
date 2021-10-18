@@ -59,7 +59,7 @@ app.use("/api/widgets", widgetsRoutes(db));
 
 app.get('/messages', (req, res) => {
   res.render('pages/messages');
-})
+});
 
 app.get('/new-listing', (req, res) => {
   res.render('pages/new-listing');

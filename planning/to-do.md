@@ -24,6 +24,19 @@
   - Messages
   - New message
 
+## endpoints
+- /
+- /my-listings
+- /purchases
+- /watching
+- /messages
+- /messages/:id
+- /new-message
+- /filtered-page
+- /submit-message
+- /new-listing
+- /? for new listings
+
 ## Database
 - Make schemas (creates tables)
 - Seed files for db (creates table data)
