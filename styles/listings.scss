@@ -41,8 +41,9 @@ img {
 
 .description {
   transition: .2s;
+  text-align: center;
 }
 
-// .listing:hover .description {
-//   transform: translateY(0);
-// }
+.message-seller-button {
+  align-self: flex-end;
+}

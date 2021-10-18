@@ -5,70 +5,147 @@
   <%- include('../partials/_head') %>
 </head>
 
-<body>
-  <header>
+<body class="messages">
+  <nav>
     <%- include('../partials/_navbar') %>
-  </header>
+  </nav>
 
   <header>
-    <h1>messages</h1>
+    <h3>Messages</h3>
   </header>
 
   <main>
-    <h3>My Messages</h3>
-    <!-- <table class="messages-table">
-      <tr>
-        <th scope="col"></th>
-      </tr>
-    </table> -->
-
     <div class="messages-index">
-      <div class="nav">
-        <a href="#">inbox</a>
-        <a href="#">starred</a>
-        <a href="#">sent</a>
-      </div>
-      <div class="messages">
-        <input name="search" placeholder="search" />
+        <input id="search" placeholder="search"/>
 
-        <div class="message">
+        <table>
+          <tbody>
+            <form method="GET" action="/messages/show">
+              <tr class="message">
+                <td class="sender">Salziver Deepbelch</td>
+                <td class="subject">Submit an offer</td>
+                <td class="body">Hello, I would love to discuss my offer for your property</td>
+                <td class="date">today</td>
+              </tr>
+            </form>
+
+            <form method="GET" action="/messages/show">
+              <tr class="message">
+                <td class="sender">Bimpnottin Fnipper</td>
+                <td class="subject">Garden?</td>
+                <td class="body">Hi there! I love your property, what is the garden situation like? I love me some berries.</td>
+                <td class="date">today</td>
+              </tr>
+            </form>
+
+            <form method="GET" action="/messages/show">
+              <tr class="message">
+                <td class="sender">Grafan Quickbell</td>
+                <td class="subject">Build year</td>
+                <td class="body">When was your property built?</td>
+                <td class="date">today</td>
+              </tr>
+            </form>
+
+            <form method="GET" action="/messages/show">
+              <tr class="message">
+                <td class="sender">Nissa Ashhearth</td>
+                <td class="subject">Property inquiry</td>
+                <td class="body">Hello, I would love to hear more about your property</td>
+                <td class="date">yesterday</td>
+              </tr>
+            </form>
+
+            <form method="GET" action="/messages/show">
+              <tr class="message">
+                <td class="sender">Savyn Wegglehaggle</td>
+                <td class="subject">Neighbourhood inquiry</td>
+                <td class="body">Hello, could you tell me more about the neighbourhood?</td>
+                <td class="date">yesterday</td>
+              </tr>
+            </form>
+
+            <form method="GET" action="/messages/show">
+              <tr class="message">
+                <td class="sender">Horxif Tunggasanack</td>
+                <td class="subject">Orcs in the area??</td>
+                <td class="body">I was told there were orcs in the area... Please tell me more.</td>
+                <td class="date">yesterday</td>
+              </tr>
+            </form>
+
+            <form method="GET" action="/messages/show">
+              <tr class="message">
+                <td class="sender">Salziver Deepbelch</td>
+                <td class="subject">Submit an offer</td>
+                <td class="body">Hello, I would love to discuss my offer for your property</td>
+                <td class="date">yesterday</td>
+              </tr>
+            </form>
+
+          </tbody>
+        </table>
+
+        <!-- <div class="message">
           <span class="sender">Salziver Deepbelch</span>
+          <div class="content">
+            <span class="subject">Submit an offer</span>
+            <span>--</span>
+            <span class="body">Hello, I would love to discuss my offer for your property</span>
+          </div>
           <span class="date">today</span>
-          <span class="title">Hello, I would like to submit an offer</span>
         </div>
 
         <div class="message">
           <span class="sender">Bimpnottin Fnipper</span>
+          <div class="content">
+            <span class="subject">Garden?</span>
+            <span>--</span>
+            <span class="body">Hi there! I love your property, what is the garden situation like? I love me some berries.</span>
+          </div>
           <span class="date">today</span>
-          <span class="title">hello world</span>
         </div>
 
         <div class="message">
           <span class="sender">Grafan Quickbell</span>
+          <div class="content">
+            <span class="subject">Build year</span>
+            <span>--</span>
+            <span class="body">When was your property built?</span>
+          </div>
           <span class="date">today</span>
-          <span class="title">When was your property built?</span>
         </div>
 
         <div class="message">
           <span class="sender">Nissa Ashhearth</span>
+          <div class="content">
+            <span class="subject">Property inquiry</span>
+            <span>--</span>
+            <span class="body">Hello, I would love to hear more about your property</span>
+          </div>
           <span class="date">today</span>
-          <span class="title">hello world</span>
         </div>
 
         <div class="message">
           <span class="sender">Savyn Wegglehaggle</span>
+          <div class="content">
+            <span class="subject">Neighbourhood inquiry</span>
+            <span>--</span>
+            <span class="body">Hello, could you tell me more about the neighbourhood?</span>
+          </div>
           <span class="date">yesterday</span>
-          <span class="title">What is the neighbourhood like?</span>
         </div>
 
         <div class="message">
           <span class="sender">Horxif Tunggasanack</span>
+          <div class="content">
+            <span class="subject">Orcs in the area??</span>
+            <span>--</span>
+            <span class="body">I was told there were orcs in the area... Please tell me more.</span>
+          </div>
           <span class="date">thursday</span>
-          <span class="title">I was told there were orcs in the area... Please tell me more.</span>
         </div>
-
-      </div>
-    </div>
+    </div> -->
 
   </main>
 
