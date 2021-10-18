@@ -24,9 +24,13 @@ module.exports = (db) => {
   });
 
   router.post("/new", (req, res) => {
+    const {
+      description,
+      price
+    }
+
     res.render("pages/my-listings");
   });
-
 
 return router;
 };
