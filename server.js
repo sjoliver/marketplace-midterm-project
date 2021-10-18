@@ -45,6 +45,7 @@ const listingsRoute = require("./routes/listings");
 const watchingRoute = require("./routes/watching");
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
+const messagesRoutes = require("./routes/messages")
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -52,6 +53,7 @@ app.use("/", indexRoutes(db));
 app.use("/listings", listingsRoute(db));
 app.use("/watching", watchingRoute(db));
 app.use("/users", usersRoutes(db));
+app.use("/messages", messagesRoutes(db))
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
@@ -59,9 +61,9 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-app.get('/messages', (req, res) => {
-  res.render('pages/messages');
-});
+// app.get('/messages', (req, res) => {
+//   res.render('pages/messages');
+// });
 
 app.get('/new-listing', (req, res) => {
   res.render('pages/new-listing');
