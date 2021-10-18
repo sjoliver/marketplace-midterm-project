@@ -1,18 +1,35 @@
+<link rel="stylesheet" href="/styles/new-message.css" type="text/css" />
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <%- include('../partials/_head') %>
+  <title>New Message</title>
 </head>
 
 <body>
-  <header>
-    <%- include('../partials/_navbar') %>
-  </header>
+  <nav>
+    <%- include('../partials/_navbar'); %>
+  </nav>
 
   <main>
+    <form action="/submit-message" method="POST">
+      <div class="new-message-form">
+        <div class="form-subject">
+          <label>Subject:</label>
+          <input type="text" name="subject" class="new-message-subject">
+        </div>
 
-
+        <div class="form-body">
+          <label>Input your message here:</label>
+          <textarea class="new-message-body" cols="50" rows="15"></textarea>
+        </div>
+      </div>
+      <div class=new-message-button>
+        <button type="button">Send Message</button>
+      </div>
+    </form>
   </main>
 
 <footer>

@@ -59,7 +59,7 @@ app.use("/api/widgets", widgetsRoutes(db));
 
 app.get('/messages', (req, res) => {
   res.render('pages/messages');
-})
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
