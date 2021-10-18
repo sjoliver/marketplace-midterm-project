@@ -1,4 +1,17 @@
 // Client facing scripts here
+
+
+document.body.addEventListener('click', updatePage);
+
+function updatePage(event) {
+  if (event.target.className === "nav-watching") {
+    loadWatching();
+  }
+  if (event.target.className === "nav-listings") {
+    loadListings();
+  }
+};
+
 function createListingElements(db) {
 
   for (let listing of db) {
@@ -22,8 +35,6 @@ function createListingElements(db) {
     </footer>
      `;
 
-    console.log("hello world");
-
     document.querySelector(".listing-container").prepend(listingArticle);
   }
 }
@@ -34,4 +45,9 @@ function loadListings() {
   });
 }
 
-loadListings();
+function loadWatching() {
+  $.get( "/watching", function( data ) {
+      createListingElements(data);
+  });
+}
+
