@@ -61,6 +61,18 @@ app.get('/messages', (req, res) => {
   res.render('pages/messages');
 });
 
+app.get('/new-listing', (req, res) => {
+  res.render('pages/new-listing');
+})
+
+app.get('/messages/show', (req, res) => {
+  // replaced :id with "show" for now -- will replace with :id later
+  // when replaced, remember to change messages.ejs action route
+  const messageID = req.params.id;
+  const templateVars = { messageID }
+  res.render('pages/message-show', templateVars);
+})
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
