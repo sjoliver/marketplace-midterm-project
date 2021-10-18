@@ -10,7 +10,7 @@ module.exports = (db) => {
         .then(data => {
           const listings = data.rows;
           console.log(listings);
-          res.render("pages/nick-test-home", listings);
+          res.render("pages/my-listings", listings);
         })
         .catch(err => {
           res
@@ -19,8 +19,12 @@ module.exports = (db) => {
         });
     });
 
-  router.get("/new-listing/", (req, res) => {
+  router.get("/new", (req, res) => {
     res.render("pages/new-listing");
+  });
+
+  router.post("/new", (req, res) => {
+    res.render("pages/my-listings");
   });
 
 

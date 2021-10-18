@@ -6,6 +6,23 @@ body {
   background: wheat;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+main form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main form div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 nav {
   display: flex;
   align-items: flex start;
@@ -25,4 +42,13 @@ nav a {
   margin: 1em;
   text-decoration: none;
   color: #FFFFFF;
+}
+
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  text-align: center;
 }

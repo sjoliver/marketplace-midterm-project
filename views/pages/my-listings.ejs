@@ -7,23 +7,17 @@
 </head>
 
 <body>
-  <nav>
-    <%- include('../partials/_navbar'); %>
-  </nav>
+  <%- include('../partials/_navbar'); %>
 
   <main class="main-container">
-    <div class="create-listing-button">
-      <form action="/new-listing" method="POST">
-        <button type="button">Create Listing</button>
-      </form>
+    <a href="/listings/new">Create Listing</a>
     </div>
     <%- include('../partials/_filter-box') %>
     <%- include('../partials/_listings') %>
   </main>
 
-<footer>
-  <%- include('../partials/_footer') %>
-</footer>
+
+<%- include('../partials/_footer') %>
 
 </body>
 
