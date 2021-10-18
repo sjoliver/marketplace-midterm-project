@@ -1,37 +1,53 @@
 // Client facing scripts here
-function createListingElements() {
 
-  for (let data of tweetDb) {
+
+document.body.addEventListener('click', updatePage);
+
+function updatePage(event) {
+  if (event.target.className === "nav-watching") {
+    loadWatching();
+  }
+  if (event.target.className === "nav-listings") {
+    loadListings();
+  }
+};
+
+function createListingElements(db) {
+
+  for (let listing of db) {
 
     let listingArticle = document.createElement('article');
 
-    let timeCreated = timeago.format(data.created_at, 'en_US');
+    //let timeCreated = timeago.format(listing.created_at, 'en_US');
 
     listingArticle.innerHTML = `
     <header>
       <div class="avatar">
-        <img src="${data.user.avatars}">
-        <h1>${data.user.name}</h1>
+        <h1>${listing.title}</h1>
       </div>
-      <h2>${data.user.handle}</h2>
+      <h2>${listing.country}</h2>
     </header>
     <section>
-      <p></p>
+      <p>${listing.description}</p>
     </section>
     <footer>
-      <p class="timeago">${timeCreated}</p>
-      <div class="icon-drawer">
-       <span class="fas fa-flag fa-xs"></span>
-       <span class="fas fa-retweet fa-sm"></span>
-       <span class="fas fa-heart fa-xs"></span>
-      </div>
+      <p class="timeago">${listing.asking_price}</p>
     </footer>
      `;
 
-    console.log("hello world");
-
-    tweetArticle.querySelector('p').textContent = data.content.text;
-
-    document.querySelector(".tweet-container").prepend(tweetArticle);
+    document.querySelector(".listing-container").prepend(listingArticle);
   }
 }
+
+function loadListings() {
+  $.get( "/listings", function( data ) {
+      createListingElements(data);
+  });
+}
+
+function loadWatching() {
+  $.get( "/watching", function( data ) {
+      createListingElements(data);
+  });
+}
+

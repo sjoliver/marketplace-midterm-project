@@ -42,11 +42,12 @@
 - Seed files for db (creates table data)
 
 ## Cynthia 
-- Write the db schemas (following ERD)
-- Write seeds for dummy data
+- Write the db schemas (following ERD) (x)
+- Write seeds for dummy data (x)
 
 ## Nick
-- partials
+- partials (x)
+- 
 
 ## Sophie
-- ejs pages
+- ejs pages 
