@@ -59,15 +59,6 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-
-app.get('/messages/show', (req, res) => {
-  // replaced :id with "show" for now -- will replace with :id later
-  // when replaced, remember to change messages.ejs action route
-  const messageID = req.params.id;
-  const templateVars = { messageID }
-  res.render('pages/message-show', templateVars);
-})
-
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });

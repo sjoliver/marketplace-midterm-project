@@ -7,7 +7,9 @@
 </head>
 
 <body>
-  <%- include('../partials/_navbar'); %>
+  <nav>
+    <%- include('../partials/_navbar'); %>
+  </nav>
 
   <main>
     <form name="new-listing" action="/my-listings/new" method="POST">
@@ -57,7 +59,11 @@
       </div>
     </form>
   </main>
-<%- include('../partials/_footer') %>
+
+  <footer>
+    <%- include('../partials/_footer') %>
+  </footer>
+
 
 <script type="text/javascript" src="/scripts/client.js"></script>
 
