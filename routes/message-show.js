@@ -1,24 +1,32 @@
 const express = require('express');
 const router  = express.Router();
 
-const app = express();
-app.use(express.static("public"));
-
 module.exports = (db) => {
 
   router.post("/reply", (req, res) => {
 
-    const newReply = db.query(`
-      INSERT INTO messages (buyer_id, seller_id, subject, message, listing_id)
-      VALUES ()`)
+    console.log(req.body);
 
-    res.json(newReply)
+    const newReply = `
+    INSERT INTO messages (buyer_id, seller_id, subject, message, listing_id)
+    VALUES ($1, $2, $3, $4, $5)
+    `;
+
+    db.query(newReply, [])
+      .then((response) => {
+
+        const second = `INSERT INTO messages (buyer_id, seller_id, subject, message, listing_id)
+        VALUES ($1, $2, $3, $4, $5)`
+
+        db.query(second, [])
+
+        console.log(response)
+      }).catch(error => console.log(error.message));
+
   })
 
   router.get("/reply", (req, res) => {
     // retrieve that message info from your db and send it back using -> res.json(the single message)
-
-
   })
 
   router.get("/:id", (req, res) => {
@@ -34,10 +42,11 @@ module.exports = (db) => {
 
     db.query(query, [messageID])
       .then(response => {
+
         let templateVars = { message: response.rows[0] };
         res.render("pages/message-show", templateVars);
-      })
-      .catch((error) => console.log(error.message));
+
+      }).catch(error => console.log(error.message));
   });
 
 return router;
