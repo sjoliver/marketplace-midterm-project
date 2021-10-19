@@ -52,6 +52,7 @@ module.exports = (db) => {
       ;`;
 
     let values = [ sellerId, title, description, bedrooms, bathrooms, insq, country, province, postcode, street, city, price, thumbnail ];
+
     db.query(queryString, values)
     .then((data) => {
       const listings = data.rows;
