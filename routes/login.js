@@ -11,7 +11,7 @@ module.exports = (db) => {
     const query = `
     SELECT id FROM users
     WHERE email = $1
-    `
+    `;
 
     db.query(query, [email])
       .then((result) => {

@@ -6,11 +6,16 @@ module.exports = (db) => {
 
   //Get the "My Listings" page
   router.get("/", (req, res) => {
-    let query = `SELECT * FROM listings`;
-    db.query(query)
+    const userId = [req.cookies['user_id']];
+    let queryString = `
+      SELECT *
+      FROM listings
+      WHERE seller_id = $1
+    ;`;
+    db.query(queryString, userId)
       .then(data => {
         const listings = data.rows;
-        res.render("pages/my-listings", {listings});
+        res.render("pages/my-listings", { listings });
       })
       .catch(err => {
         res
