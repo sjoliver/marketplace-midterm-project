@@ -13,6 +13,10 @@
     <form name="new-listing" action="/my-listings/new" method="POST">
       <div>
         <label>Title</label>
+        <input type="title" name="title" placeholder="Title" required>
+      </div>
+      <div>
+        <label>Description</label>
         <textarea name="description" cols="30" rows="10" required></textarea>
       </div>
 
@@ -38,6 +42,7 @@
         <label>Address</label>
         <input type="street" name="street" placeholder="Street" required>
         <input type="city" name="city" placeholder="City" required>
+        <input type="province" name="province" placeholder="Province" required>
         <input type="postcode" name="postcode" placeholder="Postal Code" required>
         <input type="country" name="country" placeholder="Country" required>
       </div>

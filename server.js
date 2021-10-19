@@ -59,13 +59,6 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-app.get('/listing/new', (req, res) => {
-  res.render('pages/');
-});
-
-app.get('/new-listing', (req, res) => {
-  res.render('pages/new-listing');
-})
 
 app.get('/messages/show', (req, res) => {
   // replaced :id with "show" for now -- will replace with :id later

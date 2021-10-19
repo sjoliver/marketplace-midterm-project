@@ -15,7 +15,7 @@ CREATE TABLE listings (
   city VARCHAR(255) NOT NULL,
   asking_price INTEGER NOT NULL DEFAULT 0,
   image_thumbnail VARCHAR(255) NOT NULL,
-  image VARCHAR(255) NOT NULL,
-  created_at DATE NOT NULL,
+  image VARCHAR(255),
+  created_at TIMESTAMP,
   available BOOLEAN NOT NULL DEFAULT TRUE
 );
