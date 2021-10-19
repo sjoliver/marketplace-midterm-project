@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/styles/listings.css" type="text/css" />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,19 +12,43 @@
     <%- include('../partials/_navbar'); %>
   </nav>
 
+
   <main class="main-container">
+
     <div class="create-listing-button">
-      <form action="/new-listing" method="POST">
-        <button type="button">Create Listing</button>
+      <form action="/my-listings/new" method="GET">
+        <button type="submit">Create Listing</button>
       </form>
     </div>
     <%- include('../partials/_filter-box') %>
-    <%- include('../partials/_listings') %>
+    <div class="listings-box">
+      <div class="listings">
+        <% for (let listing of listings) { %>
+          <div class="listing">
+            <img src="<%= listing.image_thumbnail %>" alt="gnome-home">
+            <p class="primary-info"><%= listing.title %>, $<%= listing.asking_price %>, <%= listing.num_of_bedrooms %> bedrooms, <%= listing.num_of_bathrooms %> bathrooms, <%= listing.sqr_inches %> square inches, <%= listing.street %>, <%= listing.city %>, <%= listing.province %>, <%= listing.post_code %>, <%= listing.country %>, Is available: <%= listing.available %></p>
+            <div class="description-layer">
+              <p class="description">Description: <%= listing.description %></p>
+              <div class="delete-listing-button">
+                <form action="my-listings/<%= listing.id %>/delete" method="POST">
+                  <button type="submit">Delete Listing</button>
+                </form>
+              </div>
+              <div class="sold-button">
+                <form action="my-listings/<%= listing.id %>/sold" method="POST">
+                  <button type="submit">Mark as SOLD</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
   </main>
 
-<footer>
-  <%- include('../partials/_footer') %>
-</footer>
+  <footer>
+    <%- include('../partials/_footer') %>
+  </footer>
 
 </body>
 

@@ -15,7 +15,7 @@ module.exports = (db) => {
     db.query(query)
       .then(data => {
         const widgets = data.rows;
-        res.render( "pages/index", { widgets });
+        res.json(listings);
       })
       .catch(err => {
         res

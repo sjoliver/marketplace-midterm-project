@@ -17,5 +17,5 @@ module.exports = (db) => {
       })
       .catch((error) => console.log(error.message));
   });
-return router;
+  return router;
 };

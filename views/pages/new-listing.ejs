@@ -12,55 +12,60 @@
   </nav>
 
   <main>
-    <form action="/" method="POST" id="new-listing-form">
-      <div class="new-listing-form-wrapper">
+    <form name="new-listing" action="/my-listings/new" method="POST">
+      <div>
         <label>Title</label>
-        <textarea id="listing-form-description" cols="30" rows="10"></textarea>
+        <input type="title" name="title" placeholder="Title" required>
+      </div>
+      <div>
+        <label>Description</label>
+        <textarea name="description" cols="30" rows="10" required></textarea>
       </div>
 
       <div>
         <label>Asking Price</label>
-        <input type="number" id="listing-form-price">
+        <input type="number" name="price" required>
       </div>
 
       <div>
         <label>Number of Bedrooms</label>
-        <input type="number" id="listing-form-bedrooms">
+        <input type="number" name="bedrooms" required>
 
         <label>Number of Bathrooms</label>
-        <input type="number" id="listing-form-bathrooms">
+        <input type="number" name="bathrooms" required>
       </div>
 
       <div>
         <label>Square Inches</label>
-        <input type="number" id="listing-form-sqr-inches">
+        <input type="number" name="insq" required>
       </div>
 
       <div>
         <label>Address</label>
-        <input type="street" placeholder="Street">
-        <input type="city" placeholder="City">
-        <input type="state" placeholder="Province">
-        <input type="postal-code" placeholder="Postal Code">
-        <input type="county" placeholder="County">
-        <input type="country" placeholder="Country">
+        <input type="street" name="street" placeholder="Street" required>
+        <input type="city" name="city" placeholder="City" required>
+        <input type="province" name="province" placeholder="Province" required>
+        <input type="postcode" name="postcode" placeholder="Postal Code" required>
+        <input type="country" name="country" placeholder="Country" required>
       </div>
 
       <div class="listing-images">
         <label for="thumbnail">Thumbnail image:</label>
-        <input type="file" id="thumbnail" name="thumbnail" accept="image/png, image/jpeg">
-
-        <!-- <label for="main-image">Main image:</label>
-        <input type="file" id="main-image" name="main-image" accept="image/png, image/jpeg"> -->
+        <input type="file" name="thumbnail" accept="image/png, image/jpeg" required>
       </div>
 
+      <div>
+        <button type="submit">Create New Listing</button>
+      </div>
     </form>
-
   </main>
 
-<footer>
-  <%- include('../partials/_footer') %>
-</footer>
+  <footer>
+    <%- include('../partials/_footer') %>
+  </footer>
+
+
+<script type="text/javascript" src="/scripts/client.js"></script>
 
 </body>
 
