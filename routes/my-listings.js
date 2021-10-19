@@ -6,15 +6,54 @@ module.exports = (db) => {
 
   //Get the "My Listings" page
   router.get("/", (req, res) => {
-    const userId = [req.cookies['user_id']];
+    const userId = req.cookies['user_id'];
     let queryString = `
       SELECT *
       FROM listings
       WHERE seller_id = $1
     ;`;
-    db.query(queryString, userId)
+    db.query(queryString, [userId])
       .then(data => {
         const listings = data.rows;
+        res.render("pages/my-listings", { listings });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
+  //Search by price
+  router.post("/byprice", (req, res) => {
+    const userId = req.cookies['user_id'];
+    let max = 99999999;
+    let min = 0;
+    console.log(req.body);
+
+    if (req.body.max) {
+      max = req.body.max;
+    }
+
+    if (req.body.min) {
+      min = req.body.min;
+    }
+
+    const values = [userId, min, max];
+
+    console.log(values);
+
+    let queryString = `
+      SELECT *
+      FROM listings
+      WHERE seller_id = $1
+        AND asking_price >= $2
+        AND asking_price <= $3
+    ;`;
+    db.query(queryString, values)
+      .then(data => {
+        const listings = data.rows;
+        console.log(listings);
         res.render("pages/my-listings", { listings });
       })
       .catch(err => {
