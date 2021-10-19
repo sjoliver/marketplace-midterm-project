@@ -8,7 +8,7 @@ module.exports = (db) => {
     console.log(req.body);
 
     const newReply = `
-    INSERT INTO messages (buyer_id, seller_id, subject, message, listing_id)
+    INSERT INTO threads (subject, listing_id)
     VALUES ($1, $2, $3, $4, $5)
     `;
 
