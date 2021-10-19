@@ -12,9 +12,11 @@
     <%- include('../partials/_navbar'); %>
   </nav>
 
+
   <main class="main-container">
+
     <div class="create-listing-button">
-      <form action="/new-listing" method="POST">
+      <form action="/my-listings/new" method="GET">
         <button type="submit">Create Listing</button>
       </form>
     </div>
@@ -44,9 +46,9 @@
     </div>
   </main>
 
-<footer>
-  <%- include('../partials/_footer') %>
-</footer>
+  <footer>
+    <%- include('../partials/_footer') %>
+  </footer>
 
 </body>
 
