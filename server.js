@@ -41,7 +41,7 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const indexRoutes = require("./routes/index");
-const listingsRoute = require("./routes/listings");
+const listingsRoute = require("./routes/my-listings");
 const watchingRoute = require("./routes/watching");
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
@@ -49,7 +49,7 @@ const widgetsRoutes = require("./routes/widgets");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/", indexRoutes(db));
-app.use("/listings", listingsRoute(db));
+app.use("/my-listings", listingsRoute(db));
 app.use("/watching", watchingRoute(db));
 app.use("/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
@@ -58,22 +58,6 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-
-app.get('/messages', (req, res) => {
-  res.render('pages/messages');
-});
-
-app.get('/new-listing', (req, res) => {
-  res.render('pages/new-listing');
-})
-
-app.get('/messages/show', (req, res) => {
-  // replaced :id with "show" for now -- will replace with :id later
-  // when replaced, remember to change messages.ejs action route
-  const messageID = req.params.id;
-  const templateVars = { messageID }
-  res.render('pages/message-show', templateVars);
-})
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

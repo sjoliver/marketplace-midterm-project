@@ -2,77 +2,24 @@
 
 <div class="listings-box">
   <div class="listings">
-    <div class="listing">
-      <img src=https://builtbykids.com/wp-content/uploads/2020/04/gnomehome2-1.jpg alt="gnome-home">
-      <p class="primary-info">Title, price, address, bedrooms, bathrooms, sqr inches</p>
-      <div class="description-layer">
-        <p class="description">Description: This is a warm cozy home in a great neighbourhood!</p>
-        <div class="message-seller-button">
-          <form action="/new-message" method="POST">
-            <button type="button">Message Seller</button>
-          </form>
+    <% for (let listing of listings) { %>
+      <div class="listing">
+        <img src="<%= listing.image_thumbnail %>" alt="gnome-home">
+        <p class="primary-info"><%= listing.title %>, $<%= listing.asking_price %>, <%= listing.num_of_bedrooms %> bedrooms, <%= listing.num_of_bathrooms %> bathrooms, <%= listing.sqr_inches %> square inches, <%= listing.street %>, <%= listing.city %>, <%= listing.province %>, <%= listing.post_code %>, <%= listing.country %>, Is available: <%= listing.available %></p>
+        <div class="description-layer">
+          <p class="description">Description: <%= listing.description %></p>
+          <div class="message-seller-button">
+            <form action="/new-message" method="POST">
+              <button type="submit">Message Seller</button>
+            </form>
+          </div>
+          <div class="favourite-button">
+            <form action="/<%= listing.id %>/watching" method="POST">
+              <button type="submit">Favourite</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="listing">
-      <img src=https://builtbykids.com/wp-content/uploads/2020/04/gnomehome2-1.jpg alt="gnome-home">
-      <p class="primary-info">Title, price, address, bedrooms, bathrooms, sqr inches</p>
-      <div class="description-layer">
-        <p class="description">Description: This is a warm cozy home in a great neighbourhood!</p>
-        <div class="message-seller-button">
-          <form action="/new-message" method="POST">
-            <button type="button">Message Seller</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="listing">
-      <img src=https://builtbykids.com/wp-content/uploads/2020/04/gnomehome2-1.jpg alt="gnome-home">
-      <p class="primary-info">Title, price, address, bedrooms, bathrooms, sqr inches</p>
-      <div class="description-layer">
-        <p class="description">Description: This is a warm cozy home in a great neighbourhood!</p>
-        <div class="message-seller-button">
-          <form action="/new-message" method="POST">
-            <button type="button">Message Seller</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="listing">
-      <img src=https://builtbykids.com/wp-content/uploads/2020/04/gnomehome2-1.jpg alt="gnome-home">
-      <p class="primary-info">Title, price, address, bedrooms, bathrooms, sqr inches</p>
-      <div class="description-layer">
-        <p class="description">Description: This is a warm cozy home in a great neighbourhood!</p>
-        <div class="message-seller-button">
-          <form action="/new-message" method="POST">
-            <button type="button">Message Seller</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="listing">
-      <img src=https://builtbykids.com/wp-content/uploads/2020/04/gnomehome2-1.jpg alt="gnome-home">
-      <p class="primary-info">Title, price, address, bedrooms, bathrooms, sqr inches</p>
-      <div class="description-layer">
-        <p class="description">Description: This is a warm cozy home in a great neighbourhood!</p>
-        <div class="message-seller-button">
-          <form action="/new-message" method="POST">
-            <button type="button">Message Seller</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="listing">
-      <img src=https://builtbykids.com/wp-content/uploads/2020/04/gnomehome2-1.jpg alt="gnome-home">
-      <p class="primary-info">Title, price, address, bedrooms, bathrooms, sqr inches</p>
-      <div class="description-layer">
-        <p class="description">Description: This is a warm cozy home in a great neighbourhood!</p>
-        <div class="message-seller-button">
-          <form action="/new-message" method="POST">
-            <button type="button">Message Seller</button>
-          </form>
-        </div>
-      </div>
-    </div>
+    <% } %>
   </div>
 </div>
