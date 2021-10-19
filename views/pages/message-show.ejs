@@ -3,6 +3,8 @@
 
 <head>
   <%- include('../partials/_head') %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/scripts/messages.js"></script>
 </head>
 
 <body>
@@ -10,18 +12,36 @@
     <%- include('../partials/_navbar') %>
   </nav>
 
+  <header>
+    <h4>Subject: <%= message.subject %></h4>
+  </header>
+
   <main>
-    <div class="container ">
-      <span class="sender">Salziver</span>
-      <p>Hello, I would love to discuss my offer for your property</p>
-      <span class="time-right">11:00 am</span>
+
+    <!-- SENDER -->
+    <div class="container darker">
+      <span class="sender right"><%= message.sender %></span>
+      <p><%= message.message %></p>
+      <span class="time-left">11:00 am</span>
     </div>
 
-    <div class="container darker">
-      <span class="sender right">Bimpnottin</span>
+    <!-- RECEIVER -->
+    <!-- <div class="container">
+      <span class="sender">Salziver</span>
       <p>Hey there! Thanks for your interest in my listing, what can I tell you about the property?</p>
-      <span class="time-left">11:15 am</span>
-    </div>
+      <span class="time-right">11:15 am</span>
+    </div> -->
+
+    <!-- REPLY FORM -->
+    <form id="response-form" action="/messages/<%= message.id %>" method="POST">
+        <div class="form-body">
+          <textarea class="reply-message-body" cols="50" rows="15" placeholder="Reply"></textarea>
+        </div>
+      </div>
+      <div class=send-message-button>
+        <button type="submit">Send</button>
+      </div>
+    </form>
 
   </main>
 

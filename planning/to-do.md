@@ -47,7 +47,6 @@
 
 ## Nick
 - partials (x)
-- 
 
 ## Sophie
 - ejs pages 
