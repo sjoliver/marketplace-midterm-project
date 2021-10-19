@@ -20,13 +20,15 @@ module.exports = (db) => {
   });
 
   router.post("/:listing/watching", (req, res) => {
-    const listingId = req.params.listingId;
-    const values = [1, listingId];
+    const listingId = req.params.listing;
+    const buyerId = req.cookies.user_id;
+    const values = [buyerId, listingId];
 
     let queryString =
     `INSERT INTO favourites (buyer_id, listing_id)
     VALUES ($1, $2);
     `;
+
     db.query(queryString, values)
       .then(() => {
         res.redirect("/");

@@ -8,15 +8,40 @@ img {
 }
 
 .listing {
+  border-radius: 10%;
   display: flex;
-  justify-content: space-around;
   position: relative;
-  background-color:rgb(194, 213, 224);
+  background-color:orange;
   float: left;
   width: 33.33%;
-  padding: 10px;
+  padding: 15px;
   height: 200px;
   border: 5px solid white;
+}
+
+.primary-info {
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.listing-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.listing-price {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: green;
+}
+
+.listing-addr {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .description-layer {
@@ -25,18 +50,20 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(36, 62, 206, 0.6);
-  color: #fff;
+  background: rgba(orange, 0.8);
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+  color: white;
   visibility: hidden;
   opacity: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .listing:hover .description-layer {
   visibility: visible;
   opacity: 1;
+  box-shadow: 5px 5px #888888;
+  border-radius: 10%;
 }
 
 .description {
@@ -44,20 +71,8 @@ img {
   text-align: center;
 }
 
-.message-seller-button {
+.listing-button {
   align-self: flex-end;
-}
-
-.favourite-button {
-  align-self: flex-end;
-  margin-left: 10px;
-}
-
-.sold-button {
-  align-self: flex-end;
-  margin-left: 10px;
-}
-
-.delete-listing-button {
-  align-self: flex-end;
+  margin-right: 15px;
+  margin-bottom: 10px;
 }

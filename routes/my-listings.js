@@ -68,11 +68,15 @@ module.exports = (db) => {
   //Delete selected listing
   router.post("/:listing/delete", (req, res) => {
     const listingId = req.params.listing;
-    const values = [listingId];
+    const sellerId = req.cookies.user_id;
+    const values = [sellerId, listingId];
 
     let queryString =
     `DELETE FROM listings
-    WHERE listings.id = $1`;
+    WHERE listings.seller_id = $1
+    AND listings.id = $2;
+    `;
+
     db.query(queryString, values)
       .then(() => {
         res.redirect("/my-listings");
@@ -87,12 +91,16 @@ module.exports = (db) => {
   //Mark listing as sold
   router.post("/:listing/sold", (req, res) => {
     const listingId = req.params.listing;
-    const values = [listingId];
+    const sellerId = req.cookies.user_id;
+    const values = [sellerId, listingId];
 
     let queryString =
     `UPDATE listings
     SET available = false
-    WHERE listings.id = $1`;
+    WHERE listings.seller_id = $1
+    AND listings.id = $2;
+    `;
+
     db.query(queryString, values)
       .then(() => {
         res.redirect("/my-listings");
