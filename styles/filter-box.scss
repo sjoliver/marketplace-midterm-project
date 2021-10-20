@@ -5,10 +5,13 @@
 
 .filter-box {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  background-color: rgb(58, 58, 223);
-  width: 100%;
+  background-color: orange;
+  width: 700px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .filter-label {
@@ -19,4 +22,20 @@
 .price-filter-label {
   color: rgb(230, 240, 230);
   font-size: 24px;
+}
+
+.filter-box button {
+  margin: 15px;
+  padding: 5px;
+}
+
+.filter-box label {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.filter-box input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid brown;
 }
