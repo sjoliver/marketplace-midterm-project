@@ -13,6 +13,7 @@
   </nav>
 
   <header>
+    <h4>Listing: <%= message.listing_name %></h4>
     <h4>Subject: <%= message.subject %></h4>
   </header>
 
@@ -33,7 +34,7 @@
     </div> -->
 
     <!-- REPLY FORM -->
-    <form id="response-form" action="/messages/<%= message.id %>" method="POST">
+    <form id="response-form" action="/messages/<%= message.thread_id %>" method="POST">
         <div class="form-body">
           <textarea name="reply" class="reply-message-body" cols="50" rows="15" placeholder="Reply"></textarea>
         </div>
