@@ -47,7 +47,6 @@ const indexRoutes = require("./routes/index");
 const listingsRoute = require("./routes/my-listings");
 const watchingRoute = require("./routes/watching");
 const usersRoutes = require("./routes/users");
-const widgetsRoutes = require("./routes/widgets");
 const messagesRoutes = require("./routes/messages");
 const messageShowRoutes = require("./routes/message-show");
 const loginRoutes = require("./routes/login");
@@ -62,7 +61,6 @@ app.use("/watching", watchingRoute(db));
 app.use("/users", usersRoutes(db));
 app.use("/messages", messagesRoutes(db));
 app.use("/messages", messageShowRoutes(db));
-app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page

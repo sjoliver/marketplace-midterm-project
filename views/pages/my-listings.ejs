@@ -19,7 +19,15 @@
         <button type="submit">Create Listing</button>
       </form>
     </div>
-    <%- include('../partials/_filter-box') %>
+    <div class="filter-box">
+      <form method="POST" action="/my-listings/byprice">
+          <label class="price-filter-label">Min Price:</label>
+            <input type="number" name="min">
+          <label class="price-filter-label">Max Price:</label>
+            <input type="number" name="max">
+          <button type="submit">Submit</button>
+      </form>
+    </div>
     <div class="listings-box">
       <div class="listings">
         <% for (let listing of listings) { %>
