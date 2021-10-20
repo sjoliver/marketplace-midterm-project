@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/styles/listings.css" type="text/css" />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,10 +21,39 @@
           <button type="submit">Submit</button>
       </form>
     </div>
-    <%- include('../partials/_listings') %>
+    <div class="listings-box">
+      <div class="listings">
+        <% for (let listing of listings) { %>
+          <div class="listing">
+            <img src="<%= listing.image_thumbnail %>" alt="gnome-home">
+            <div>
+              <div class="listing-title"><%= listing.title %>
+              </div>
+              <div class="listing-price">$<%= listing.asking_price %>
+              </div>
+              <div class="primary-info"><%= listing.num_of_bedrooms %> bedrooms, <%= listing.num_of_bathrooms %> bathrooms, <%= listing.sqr_inches %> square inches
+              </div>
+              <div class="listing-addr"><u>Address</u>: <%= listing.street %>, <%= listing.city %>, <%= listing.province %>, <%= listing.post_code %>, <%= listing.country %>
+              </div>
+            </div>
+            <div class="description-layer">
+              <p class="description">Description: <%= listing.description %></p>
+              <div class="listing-button">
+                <form action="/new-message" method="POST">
+                  <button type="submit" class="btn btn-success btn-sm">Message Seller</button>
+                </form>
+              </div>
+              <div class="listing-button">
+                <form action="/<%= listing.id %>/watching" method="POST">
+                  <button type="submit" class="btn btn-light btn-sm">Add to Watching</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
   </main>
-  <script src="https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js"></script>
-<coingecko-coin-compare-chart-widget  coin-ids="bitcoin,solana,cope" currency="usd" locale="en"></coingecko-coin-compare-chart-widget>
 
 <footer>
   <%- include('../partials/_footer') %>

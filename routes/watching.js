@@ -15,7 +15,7 @@ module.exports = (db) => {
     db.query(queryString, userId)
       .then(data => {
         const listings = data.rows;
-        res.render("pages/my-listings", {listings});
+        res.render("pages/watching", {listings});
       })
       .catch(err => {
         res
