@@ -38,6 +38,7 @@
             </div>
             <div class="description-layer">
               <p class="description">Description: <%= listing.description %></p>
+              <% if (userId != listing.seller_id) { %>
               <div class="listing-button">
                 <form action="/new-message" method="POST">
                   <button type="submit" class="btn btn-success btn-sm">Message Seller</button>
@@ -48,7 +49,11 @@
                   <button type="submit" class="btn btn-light btn-sm">Add to Watching</button>
                 </form>
               </div>
+            <% } %>
             </div>
+            <% if (listing.available === false) { %>
+              <img src="https://cdn4.iconfinder.com/data/icons/realtor/500/SingleCartoonRealtorAlice_10-512.png" alt="sold-sign">
+            <% } %>
           </div>
         <% } %>
       </div>
