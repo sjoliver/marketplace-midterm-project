@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="/styles/listings.css" type="text/css" />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,12 +32,13 @@
               </div>
               <div class="primary-info"><%= listing.num_of_bedrooms %> bedrooms, <%= listing.num_of_bathrooms %> bathrooms, <%= listing.sqr_inches %> square inches
               </div>
-              <div class="listing-addr"><u>Address</u>: <%= listing.street %>, <%= listing.city %>, <%= listing.province %>, <%= listing.post_code %>, <%= listing.country %>
+              <div class="listing-addr"><u>Address:</u> <%= listing.street %>, <%= listing.city %>, <%= listing.province %>, <%= listing.post_code %>, <%= listing.country %>
               </div>
             </div>
             <div class="description-layer">
-              <p class="description">Description: <%= listing.description %></p>
+              <p class="description"><%= listing.description %></p>
               <% if (userId != listing.seller_id) { %>
+            <div>
               <div class="listing-button">
                 <form action="/new-message" method="POST">
                   <button type="submit" class="btn btn-success btn-sm">Message Seller</button>
@@ -49,10 +49,11 @@
                   <button type="submit" class="btn btn-light btn-sm">Add to Watching</button>
                 </form>
               </div>
+            </div>
             <% } %>
             </div>
             <% if (listing.available === false) { %>
-              <img src="https://cdn4.iconfinder.com/data/icons/realtor/500/SingleCartoonRealtorAlice_10-512.png" alt="sold-sign">
+              <img class="sold-img" src="https://www.osoyoos.ca/sites/osoyoos.civicwebcms.com/files/media/Samples/sold.png" alt="sold-sign">
             <% } %>
           </div>
         <% } %>
