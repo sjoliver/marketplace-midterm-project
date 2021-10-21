@@ -20,15 +20,22 @@
 
         <table>
           <tbody>
+            <% let previousId = 0; %>
             <% for(const messageObj of messagesArray) { %>
-            <form method="GET" action="/messages/<%= messageObj.id %>">
+              <% if (messageObj.id !== previousId) { %>
               <tr class="message">
                 <td class="sender"><%= messageObj.sender %></td>
                 <td class="subject"><%= messageObj.subject %>--</td>
                 <td class="body"><%= messageObj.message %></td>
-                <td class="date">today</td>
+                <td class="date"><%= messageObj.created_at %></td>
+                <td>
+                  <form method="GET" action="/messages/<%= messageObj.id %>">
+                    <button type="submit">View</button>
+                  </form>
+                </td>
               </tr>
-            </form>
+                <% previousId = messageObj.id %>
+              <% } %>
             <% } %>
 
             <!-- <form method="GET" action="/messages/show">
