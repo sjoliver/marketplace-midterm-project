@@ -4,24 +4,21 @@
 }
 
 .filter-box {
+  border-radius: 2%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: orange;
+  background-color: #f17d00;
   width: 700px;
   margin-bottom: 20px;
   margin-top: 20px;
-}
-
-.filter-label {
-  color: rgb(230, 240, 230);
-  font-size: 36px;
+  box-shadow: 2px 2px #888888;
 }
 
 .price-filter-label {
-  color: rgb(230, 240, 230);
-  font-size: 24px;
+  color: #fefefe;
+  font-size: 16px;
 }
 
 .filter-box button {
@@ -34,8 +31,3 @@
   margin-right: 10px;
 }
 
-.filter-box input {
-  background-color: transparent;
-  border: none;
-  border-bottom: 3px solid brown;
-}
