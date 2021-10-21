@@ -67,7 +67,7 @@ app.use("/messages", messagesRoutes(db));
 app.use("/messages", messageShowRoutes(db));
 app.use("/api/messages", messageApiRoutes(db));
 app.use("/new-message", newMessageRoutes(db));
-app.use("/api/widgets", widgetsRoutes(db));
+// app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page

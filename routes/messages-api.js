@@ -18,6 +18,12 @@ module.exports = (db) => {
     db.query(messagesQuery, [sendingUserId, message, threadId])
       .then((response) => {
 
+        const participantsQuery = `
+            INSERT INTO thread_participants (thread_id, user_id)
+            VALUES ($1, $2)
+            `
+        db.query(participantsQuery, [threadId, sendingUserId])
+
         res.json(response.rows[0])
 
       }).catch(error => console.log(error.message));
@@ -29,7 +35,7 @@ module.exports = (db) => {
     const currentUser = req.cookies['user_id'];
 
     let query = `
-      SELECT message, subject, listings.title as listingName, threads.id as thread_id, users.name as sender
+      SELECT message, subject, listings.title as listingName, threads.id as thread_id, users.name as sender, users.id as user_id
       FROM messages
       JOIN users ON users.id = sending_user_id
       JOIN threads on threads.id = thread_id

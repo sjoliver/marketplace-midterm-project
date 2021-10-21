@@ -9,7 +9,7 @@ module.exports = (db) => {
     const currentUser = req.cookies['user_id'];
 
     let query = `
-      SELECT threads.id, subject, message, messages.created_at, users.name as sender, listings.title as listing_name
+      SELECT threads.id, subject, message, messages.created_at, users.name as sender, users.id as user_id, listings.title as listing_name
       FROM threads
       JOIN messages ON threads.id = thread_id
       JOIN thread_participants ON thread_participants.thread_id = threads.id
@@ -21,8 +21,6 @@ module.exports = (db) => {
 
     db.query(query, [currentUser, threadId])
       .then(response => {
-
-        console.log(response.rows)
 
         let templateVars = { message: response.rows[0], threadId };
         res.render("pages/message-show", templateVars);

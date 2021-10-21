@@ -4,6 +4,9 @@ const router  = express.Router();
 module.exports = (db) => {
 
   router.get("/", (req, res) => {
+
+    console.log("check me out", req.body)
+    console.log("im response", res)
     res.render('pages/new-message')
   })
 
@@ -12,6 +15,8 @@ module.exports = (db) => {
     const sendingUserId = Number(req.cookies['user_id']);
     const subject = req.body.subject;
     const body = req.body.body;
+
+    console.log("req.body*******",req.body);
 
     // insert into THREADS first
     const threadsQuery = `
@@ -36,7 +41,7 @@ module.exports = (db) => {
             // insert into THREAD_PARTICIPANTS third
             const participantsQuery = `
             INSERT INTO thread_participants (thread_id, user_id)
-            VALUES ($1, $2), ($1, 1);
+            VALUES ($1, $2), ($1, (SELECT ));
             `
             db.query(participantsQuery, [threadId, sendingUserId])
 

@@ -1,3 +1,11 @@
+section.message-thread {
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
 .container {
   border: 2px solid #dedede;
   background-color: #f1f1f1;
@@ -7,26 +15,15 @@
   display: flex;
   flex-direction: column;
 
-  .darker {
-    border-color: #ccc;
-    background-color: #ddd;
+  #left-sender {
+    justify-content: left;
+  }
 
-    span.right {
-      float: right;
-      margin-left: 20px;
-      margin-right:0;
-    }
-
-    .time-left {
-      display: flex;
-      justify-content: left;
-      color: #999;
-    }
+  #right-sender {
+    justify-content: right;
   }
 
   .sender {
-    float: left;
-    max-width: 60px;
     width: 100%;
     margin-right: 20px;
     border-radius: 50%;
@@ -40,8 +37,29 @@
 
   .time-right {
     display: flex;
-    justify-content: right;
-    color: #aaa;
+    justify-content: flex-end;
+  }
+
+  .lighter {
+    display: flex;
+    align-content: flex-start;
+  }
+
+  .darker {
+    display: flex;
+    align-content: flex-end;
+    border-color: #ccc;
+    background-color: tomato;
+
+    span.right {
+      margin-left: 20px;
+      margin-right:0;
+    }
+
+    .time-left {
+      display: flex;
+      justify-content: left;
+    }
   }
 
 }

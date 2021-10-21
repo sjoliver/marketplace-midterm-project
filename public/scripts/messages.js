@@ -61,13 +61,42 @@ $(document).ready(function () {
 
     const createdTime = timeago.format(messageObject["created_at"])
 
-    const $message = `
-      <div class="container">
-        <span class="sender">${messageObject.sender}</span>
-        <p>${escape(messageObject.message)}</p>
-        <span class="time-right">${createdTime}</span>
-      </div>
-    `
+    // taken from https://stackoverflow.com/questions/1599287/create-read-and-erase-cookies-with-jquery
+    function getCookie(name) {
+      let nameEQ = name + "=";
+      let ca = document.cookie.split(';');
+      for(let i=0;i < ca.length;i++) {
+          let c = ca[i];
+          while (c.charAt(0)==' ') c = c.substring(1,c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+    }
+
+    const currentUser = Number(getCookie('user_id'));
+
+    let $message
+
+    console.log(messageObject.user_id, currentUser)
+
+    if (currentUser !== messageObject.user_id) {
+      $message = `
+        <div class="container lighter" id="left-sender">
+          <span class="sender left">${messageObject.sender}</span>
+          <p>${escape(messageObject.message)}</p>
+          <span class="time-right">${createdTime}</span>
+        </div>
+      `
+    } else {
+      $message = `
+        <div class="container darker" id="right-sender">
+            <span class="sender right">${messageObject.sender}</span>
+            <p>${escape(messageObject.message)}</p>
+            <span class="time-left">${createdTime}</span>
+        </div>
+      `
+    }
+
     return $message;
   }
 
