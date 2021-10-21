@@ -11,6 +11,12 @@ main {
   align-items: center;
 }
 
+main .top-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 main .new-listing {
   display: flex;
   flex-direction: column;
@@ -27,15 +33,6 @@ main form div {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-footer {
-  margin-top: auto;
-  width: 100%;
-  background-color: #006341;
-  color: #fefefe;
-  text-align: center;
-  margin-top: auto;
 }
 
 main .new-primary-info {
@@ -65,3 +62,25 @@ main .new-secondary-info input {
   border: 2px solid #fed09e;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 0 0;
+  margin-top: auto;
+  font-family: 'Andada Pro', serif;
+  font-size: 18px;
+  background-color: #006341;
+  color: #fefefe;
+
+}
+
+footer div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+footer div p {
+  margin: 0 10px 10px 10px;
+}
