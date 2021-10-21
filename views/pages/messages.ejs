@@ -27,10 +27,10 @@
                 <td class="sender"><%= messageObj.sender %></td>
                 <td class="subject"><%= messageObj.subject %>--</td>
                 <td class="body"><%= messageObj.message %></td>
-                <td class="date"><%= messageObj.created_at %></td>
+                <!-- <td class="date"><%= messageObj.created_at %></td> -->
                 <td>
                   <form method="GET" action="/messages/<%= messageObj.id %>">
-                    <button type="submit">View</button>
+                    <button type="submit" class="btn btn-light btn-sm">View</button>
                   </form>
                 </td>
               </tr>
