@@ -11,17 +11,17 @@ img {
 }
 
 .listing {
-  border-radius: 10%;
+  border-radius: 2%;
   display: flex;
   position: relative;
-  background-color:orange;
   float: left;
   width: 450px;
   padding: 15px;
   height: 300px;
-  border: 5px solid white;
   margin: 5px;
   align-items: center;
+  box-shadow: 2px 2px #888888;
+  background-color: #fafafa;
 }
 
 .listing img {
@@ -29,7 +29,7 @@ img {
   width: 200px;
   height: 200px;
   object-fit: cover;
-
+  border-radius: 2%;
 }
 
 .listing div {
@@ -47,13 +47,14 @@ img {
   text-align: center;
   font-size: 18px;
   font-weight: bold;
+  color: #f17d00;
 }
 
 .listing-price {
   text-align: center;
   font-size: 16px;
   font-weight: bold;
-  color: green;
+  color: #006341;
 }
 
 .listing-addr {
@@ -69,9 +70,9 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(orange, 0.8);
+  background: rgba(#FFA722, 0.95);
   background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
-  color: white;
+  color: #fefefe;
   visibility: hidden;
   opacity: 0;
   display: flex;
@@ -89,7 +90,7 @@ img {
   visibility: visible;
   opacity: 1;
   box-shadow: 5px 5px #888888;
-  border-radius: 10%;
+  border-radius: 2%;
 }
 
 .description {

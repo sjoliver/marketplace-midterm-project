@@ -22,6 +22,7 @@ module.exports = (db) => {
 
   //Search by price
   router.post("/byprice", (req, res) => {
+    const userId = req.cookies['user_id'];
     let max = 99999999;
     let min = 0;
 
@@ -33,7 +34,7 @@ module.exports = (db) => {
       min = req.body.min;
     }
 
-    const values = [ min, max];
+    const values = [min, max];
 
     let queryString = `
       SELECT *
@@ -45,7 +46,7 @@ module.exports = (db) => {
       .then(data => {
         const listings = data.rows;
         console.log(listings);
-        res.render("pages/homepage", { listings });
+        res.render("pages/homepage", { listings, userId });
       })
       .catch(err => {
         res

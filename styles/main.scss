@@ -2,8 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: wheat;
-  background-image: url("https://www.transparenttextures.com/patterns/xv.png");
+  background-color: #fefefe;
 }
 
 main {
@@ -33,3 +32,31 @@ footer {
   text-align: center;
   margin-top: auto;
 }
+
+main .new-primary-info {
+  color: #f17d00;
+  font-size: 16px;
+  margin: 20px 0 20px 0;
+}
+
+main .new-secondary-info {
+  color: #f17d00;
+  font-size: 16px;
+  margin: 0 0 20px 0;
+}
+
+main .new-primary-info input {
+  background-color: transparent;
+  border: 2px solid #fed09e;
+}
+
+main .new-primary-info textarea {
+  background-color: transparent;
+  border: 2px solid #fed09e;
+}
+
+main .new-secondary-info input {
+  background-color: transparent;
+  border: 2px solid #fed09e;
+}
+
