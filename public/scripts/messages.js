@@ -6,6 +6,7 @@ $(document).ready(function () {
 
   $("#response-form").on("submit", function(event) {
 
+    console.log("how many times are we submitting?")
     event.preventDefault();
 
     const text = $('.reply-message-body').val();
@@ -40,12 +41,19 @@ $(document).ready(function () {
     const container = $('.message-thread');
     container.empty();
 
+    let previousMessage = '';
+
     // loop through messages
     for (const message of messages) {
 
-      // calls createMessageElement for each tweet
-      const $message = createMessageElement(message);
-      container.append($message);
+      if (message.message !== previousMessage) {
+
+        // calls createMessageElement for each tweet
+        const $message = createMessageElement(message);
+        container.append($message);
+
+        previousMessage = message.message;
+      }
 
     };
   };
@@ -61,23 +69,20 @@ $(document).ready(function () {
 
     const createdTime = timeago.format(messageObject["created_at"])
 
-    // taken from https://stackoverflow.com/questions/1599287/create-read-and-erase-cookies-with-jquery
-    function getCookie(name) {
-      let nameEQ = name + "=";
-      let ca = document.cookie.split(';');
-      for(let i=0;i < ca.length;i++) {
-          let c = ca[i];
-          while (c.charAt(0)==' ') c = c.substring(1,c.length);
-          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    // // taken from https://stackoverflow.com/questions/1599287/create-read-and-erase-cookies-with-jquery
+    function readCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
       }
       return null;
-    }
-
-    const currentUser = Number(getCookie('user_id'));
+  }
+    const currentUser = Number(readCookie('user_id'));
 
     let $message
-
-    console.log(messageObject.user_id, currentUser)
 
     if (currentUser !== messageObject.user_id) {
       $message = `
