@@ -81,15 +81,15 @@ $(document).ready(function () {
 
     if (currentUser !== messageObject.user_id) {
       $message = `
-        <div class="container lighter" id="left-sender">
-          <span class="sender left">${messageObject.sender}</span>
+        <div class="message lighter" id="left-sender">
+          <span class="sender-left">${messageObject.sender}</span>
           <p>${escape(messageObject.message)}</p>
           <span class="time-right">${createdTime}</span>
         </div>
       `
     } else {
       $message = `
-        <div class="container darker" id="right-sender">
+        <div class="message darker" id="right-sender">
             <span class="sender right">${messageObject.sender}</span>
             <p>${escape(messageObject.message)}</p>
             <span class="time-left">${createdTime}</span>

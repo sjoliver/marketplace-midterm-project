@@ -3,28 +3,26 @@ const router  = express.Router();
 
 module.exports = (db) => {
 
-  router.get("/", (req, res) => {
+  router.get("/:listing", (req, res) => {
+    const listing = req.params.listing;
 
-    console.log("check me out", req.body)
-    console.log("im response", res)
-    res.render('pages/new-message')
+    res.render('pages/new-message', { listing })
   })
 
-  router.post("/", (req, res) => {
+  router.post("/:listing", (req, res) => {
 
     const sendingUserId = Number(req.cookies['user_id']);
     const subject = req.body.subject;
     const body = req.body.body;
-
-    console.log("req.body*******",req.body);
+    const listing = req.params.listing;
 
     // insert into THREADS first
     const threadsQuery = `
     INSERT INTO threads (subject, listing_id)
-    VALUES ($1, 1) RETURNING id;
+    VALUES ($1, $2) RETURNING id;
     `
 
-    db.query(threadsQuery, [subject])
+    db.query(threadsQuery, [subject, listing])
       .then((response) => {
 
         const threadId = response.rows[0].id
@@ -41,14 +39,15 @@ module.exports = (db) => {
             // insert into THREAD_PARTICIPANTS third
             const participantsQuery = `
             INSERT INTO thread_participants (thread_id, user_id)
-            VALUES ($1, $2), ($1, (SELECT ));
+            VALUES ($1, $2), ($1, (SELECT seller_id FROM listings WHERE listings.id = $3));
             `
-            db.query(participantsQuery, [threadId, sendingUserId])
+            db.query(participantsQuery, [threadId, sendingUserId, listing])
 
           }).catch(error => console.log(error.message));
-      }).catch(error => console.log(error.message));
 
-      res.redirect("/");
+          res.redirect('..');
+
+      }).catch(error => console.log(error.message));
   })
 return router
 };

@@ -48,9 +48,9 @@ const indexRoutes = require("./routes/index");
 const listingsRoute = require("./routes/my-listings");
 const watchingRoute = require("./routes/watching");
 const usersRoutes = require("./routes/users");
+const newMessageRoutes = require("./routes/new-message");
 const messagesRoutes = require("./routes/messages");
 const messageShowRoutes = require("./routes/message-show");
-const newMessageRoutes = require("./routes/new-message");
 const messageApiRoutes = require("./routes/messages-api")
 const loginRoutes = require("./routes/login");
 const { application } = require("express");
@@ -63,10 +63,10 @@ app.use("/listings", listingsRoute(db));
 app.use("/my-listings", listingsRoute(db));
 app.use("/watching", watchingRoute(db));
 app.use("/users", usersRoutes(db));
+app.use("/new-message", newMessageRoutes(db));
 app.use("/messages", messagesRoutes(db));
 app.use("/messages", messageShowRoutes(db));
 app.use("/api/messages", messageApiRoutes(db));
-app.use("/new-message", newMessageRoutes(db));
 // app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
