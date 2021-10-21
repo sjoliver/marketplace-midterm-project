@@ -10,7 +10,8 @@ module.exports = (db) => {
     db.query(query)
       .then(data => {
         const listings = data.rows;
-        res.render("pages/homepage", {listings});
+        const userId = req.cookies.user_id;
+        res.render("pages/homepage", {listings, userId});
       })
       .catch(err => {
         res
@@ -58,14 +59,33 @@ module.exports = (db) => {
     const buyerId = req.cookies.user_id;
     const values = [buyerId, listingId];
 
-    let queryString =
-    `INSERT INTO favourites (buyer_id, listing_id)
-    VALUES ($1, $2);
+    let getQuery =
+    `SELECT * FROM favourites
+    WHERE buyer_id = $1
+    AND listing_id = $2;
     `;
 
-    db.query(queryString, values)
-      .then(() => {
-        res.redirect("/");
+    db.query(getQuery, values)
+      .then((data) => {
+
+        if (data.rows.length === 0) {
+          let queryString =
+          `INSERT INTO favourites (buyer_id, listing_id)
+          VALUES ($1, $2);
+          `;
+
+          db.query(queryString, values)
+            .then(() => {
+              res.redirect("/");
+            })
+            .catch(err => {
+              res
+                .status(500)
+                .json({ error: err.message });
+            });
+        } else {
+          res.redirect("/");
+        }
       })
       .catch(err => {
         res

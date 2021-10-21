@@ -1,13 +1,12 @@
 nav {
   display: flex;
-  align-items: flex start;
+  align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  position: fixed;
-  padding: 15px 20px 0 20px;
+  padding: 0 20px 0 20px;
   height: 120px;
   width: 100vw;
-  background-color: #4056A1;
+  background-color: green;
   color: #FFFFFF;
 }
 

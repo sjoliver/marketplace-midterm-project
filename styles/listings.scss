@@ -17,11 +17,25 @@ img {
   align-items: center;
   background-color:orange;
   float: left;
-  margin: 5px;
+  width: 450px;
   padding: 15px;
   height: 300px;
-  width: 400px;
   border: 5px solid white;
+  margin: 5px;
+  align-items: center;
+}
+
+.listing img {
+  margin: 0 15px 0 15px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+
+}
+
+.listing div {
+  display: flex;
+  flex-direction: column;
 }
 
 .listing img {
@@ -54,10 +68,10 @@ img {
   text-align: center;
   font-size: 14px;
   margin-top: 10px;
+  margin-left: 10px;
 }
 
-.description-layer {
-  display: flex;
+.listing .description-layer {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -68,7 +82,15 @@ img {
   color: white;
   visibility: hidden;
   opacity: 0;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+}
+
+.description-layer div {
+  display: flex;
+  flex-direction: column;
 }
 
 .listing:hover .description-layer {
@@ -81,10 +103,18 @@ img {
 .description {
   transition: .2s;
   text-align: center;
+  margin: 0 25px 0 25px;
+  font-size: 16px;
 }
 
 .listing-button {
   align-self: flex-end;
-  margin-right: 15px;
-  margin-bottom: 10px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+.sold-img {
+  position: absolute;
+  z-index: 99;
+
 }
