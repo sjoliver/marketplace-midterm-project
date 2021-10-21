@@ -4,19 +4,31 @@ img {
 }
 
 .listings {
-  position:relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .listing {
   border-radius: 10%;
   display: flex;
   position: relative;
+  align-items: center;
   background-color:orange;
   float: left;
-  width: 33.33%;
+  margin: 5px;
   padding: 15px;
-  height: 200px;
+  height: 300px;
+  width: 400px;
   border: 5px solid white;
+}
+
+.listing img {
+  object-fit: cover;
+  margin: 0 15px 0 15px;
+  width: 200px;
+  height: 200px;
 }
 
 .primary-info {
@@ -45,6 +57,7 @@ img {
 }
 
 .description-layer {
+  display: flex;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -55,7 +68,6 @@ img {
   color: white;
   visibility: hidden;
   opacity: 0;
-  display: flex;
   align-items: center;
 }
 
