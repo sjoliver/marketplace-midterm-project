@@ -48,7 +48,6 @@ const indexRoutes = require("./routes/index");
 const listingsRoute = require("./routes/my-listings");
 const watchingRoute = require("./routes/watching");
 const usersRoutes = require("./routes/users");
-const widgetsRoutes = require("./routes/widgets");
 const messagesRoutes = require("./routes/messages");
 const messageShowRoutes = require("./routes/message-show");
 const newMessageRoutes = require("./routes/new-message");

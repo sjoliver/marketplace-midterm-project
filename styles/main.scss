@@ -2,16 +2,17 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: rgb(163, 208, 219);
-  background: wheat;
+  background-color: wheat;
+  background-image: url("https://www.transparenttextures.com/patterns/xv.png");
 }
 
 main {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-main form {
+main .new-listing {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,32 +24,12 @@ main form div {
   align-items: center;
 }
 
-nav {
-  display: flex;
-  align-items: flex start;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 15px 20px 0 20px;
-  height: 120px;
-  width: 100vw;
-  background-color: #4056A1;
-  color: #FFFFFF;
-}
-
-nav a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1em;
-  text-decoration: none;
-  color: #FFFFFF;
-}
-
 footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #4056A1;
+  background-color: green;
   color: #FFFFFF;
   text-align: center;
+  margin-top: auto;
 }

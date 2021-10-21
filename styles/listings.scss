@@ -4,60 +4,109 @@ img {
 }
 
 .listings {
-  position:relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .listing {
+  border-radius: 10%;
   display: flex;
-  justify-content: space-around;
   position: relative;
-  background-color:rgb(194, 213, 224);
+  background-color:orange;
   float: left;
-  width: 33.33%;
-  padding: 10px;
-  height: 200px;
+  width: 450px;
+  padding: 15px;
+  height: 300px;
   border: 5px solid white;
+  margin: 5px;
+  align-items: center;
 }
 
-.description-layer {
+.listing img {
+  margin: 0 15px 0 15px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+
+}
+
+.listing div {
+  display: flex;
+  flex-direction: column;
+}
+
+.primary-info {
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.listing-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.listing-price {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: green;
+}
+
+.listing-addr {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.listing .description-layer {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(36, 62, 206, 0.6);
-  color: #fff;
+  background: rgba(orange, 0.8);
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+  color: white;
   visibility: hidden;
   opacity: 0;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.description-layer div {
+  display: flex;
+  flex-direction: column;
 }
 
 .listing:hover .description-layer {
   visibility: visible;
   opacity: 1;
+  box-shadow: 5px 5px #888888;
+  border-radius: 10%;
 }
 
 .description {
   transition: .2s;
   text-align: center;
+  margin: 0 25px 0 25px;
+  font-size: 16px;
 }
 
-.message-seller-button {
+.listing-button {
   align-self: flex-end;
+  margin-right: 20px;
+  margin-top: 10px;
 }
 
-.favourite-button {
-  align-self: flex-end;
-  margin-left: 10px;
-}
+.sold-img {
+  position: absolute;
+  z-index: 99;
 
-.sold-button {
-  align-self: flex-end;
-  margin-left: 10px;
-}
-
-.delete-listing-button {
-  align-self: flex-end;
 }

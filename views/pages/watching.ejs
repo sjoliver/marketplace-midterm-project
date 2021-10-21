@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/styles/listings.css" type="text/css" />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,8 +13,35 @@
   </nav>
 
   <main class="main-container">
-    <%- include('../partials/_filter-box') %>
-    <%- include('../partials/_listings') %>
+    <div class="filter-box">
+      <form method="POST" action="/watching/byprice">
+          <label class="price-filter-label">Min Price:</label>
+            <input type="number" name="min">
+          <label class="price-filter-label">Max Price:</label>
+            <input type="number" name="max">
+          <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="listings-box">
+      <div class="listings">
+        <% for (let listing of listings) { %>
+          <div class="listing">
+            <img src="<%= listing.image_thumbnail %>" alt="gnome-home">
+            <div class="title-and-primary">
+              <div class="listing-title"><%= listing.title %></div>
+              <div class="listing-price">$<%= listing.asking_price %></div>
+              <div class="primary-info"><%= listing.num_of_bedrooms %> bedrooms, <%= listing.num_of_bathrooms %> bathrooms, <%= listing.sqr_inches %> square inches
+              </div>
+              <div class="listing-addr"><u>Address:</u> <%= listing.street %>, <%= listing.city %>, <%= listing.province %>, <%= listing.post_code %>, <%= listing.country %>
+              </div>
+            </div>
+            <div class="description-layer">
+              <p class="description"><%= listing.description %></p>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
   </main>
 
 <footer>

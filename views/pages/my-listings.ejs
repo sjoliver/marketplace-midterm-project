@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="/styles/listings.css" type="text/css" />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,34 +11,56 @@
     <%- include('../partials/_navbar'); %>
   </nav>
 
-
   <main class="main-container">
 
-    <div class="create-listing-button">
+
+    <div class="filter-box">
+      <form method="POST" action="/my-listings/byprice">
+          <label class="price-filter-label">Min Price:</label>
+            <input type="number" name="min">
+          <label class="price-filter-label">Max Price:</label>
+            <input type="number" name="max">
+          <button type="submit" class="btn btn-light">Submit</button>
+      </form>
+      <div class="create-listing-button">
       <form action="/my-listings/new" method="GET">
-        <button type="submit">Create Listing</button>
+        <button type="submit" class="btn btn-light">Create New Listing</button>
       </form>
     </div>
-    <%- include('../partials/_filter-box') %>
+    </div>
     <div class="listings-box">
       <div class="listings">
         <% for (let listing of listings) { %>
           <div class="listing">
             <img src="<%= listing.image_thumbnail %>" alt="gnome-home">
-            <p class="primary-info"><%= listing.title %>, $<%= listing.asking_price %>, <%= listing.num_of_bedrooms %> bedrooms, <%= listing.num_of_bathrooms %> bathrooms, <%= listing.sqr_inches %> square inches, <%= listing.street %>, <%= listing.city %>, <%= listing.province %>, <%= listing.post_code %>, <%= listing.country %>, Is available: <%= listing.available %></p>
+            <div>
+              <div class="listing-title"><%= listing.title %>
+              </div>
+              <div class="listing-price">$<%= listing.asking_price %>
+              </div>
+              <div class="primary-info"><%= listing.num_of_bedrooms %> bedrooms, <%= listing.num_of_bathrooms %> bathrooms, <%= listing.sqr_inches %> square inches
+              </div>
+              <div class="listing-addr"><u>Address:</u> <%= listing.street %>, <%= listing.city %>, <%= listing.province %>, <%= listing.post_code %>, <%= listing.country %>
+              </div>
+            </div>
             <div class="description-layer">
-              <p class="description">Description: <%= listing.description %></p>
-              <div class="delete-listing-button">
+              <p class="description"><%= listing.description %></p>
+              <div>
+              <div class="listing-button">
                 <form action="my-listings/<%= listing.id %>/delete" method="POST">
-                  <button type="submit">Delete Listing</button>
+                  <button type="submit" class="btn btn-danger btn-sm">Delete Listing</button>
                 </form>
               </div>
-              <div class="sold-button">
+              <div class="listing-button">
                 <form action="my-listings/<%= listing.id %>/sold" method="POST">
-                  <button type="submit">Mark as SOLD</button>
+                  <button type="submit" class="btn btn-outline-danger btn-sm">Mark Sold</button>
                 </form>
               </div>
             </div>
+          </div>
+          <% if (listing.available === false) { %>
+            <img class="sold-img" src="https://www.osoyoos.ca/sites/osoyoos.civicwebcms.com/files/media/Samples/sold.png" alt="sold-sign">
+          <% } %>
           </div>
         <% } %>
       </div>
