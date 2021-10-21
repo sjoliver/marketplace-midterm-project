@@ -17,7 +17,7 @@ const dbParams = require("./lib/db.js");
 const db = new Pool(dbParams);
 db.connect(error => {
   if (error) throw error;
-  console.log("Server also connected");
+  console.log("Loading gnome homes...");
 });
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
