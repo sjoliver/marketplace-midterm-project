@@ -3,7 +3,7 @@
 
 <head>
   <%- include('../partials/_head') %>
-  <title>New Listings</title>
+  <title>Create Listing</title>
 </head>
 
 <body>
@@ -12,36 +12,38 @@
   </nav>
 
   <main>
+    <div class="new-primary-info">
     <form name="new-listing" action="/my-listings/new" method="POST">
       <div>
-        <label>Title</label>
+        <label>Title:</label>
         <input type="title" name="title" placeholder="Title" required>
       </div>
       <div>
-        <label>Description</label>
+        <label>Description:</label>
         <textarea name="description" cols="30" rows="10" placeholder="Enter description" required></textarea>
       </div>
-
       <div>
-        <label>Asking Price</label>
+        <label>Asking Price:</label>
         <input type="number" name="price" required>
       </div>
+    </div>
 
+    <div class="new-secondary-info">
       <div>
-        <label>Number of Bedrooms</label>
+        <label>Number of Bedrooms:</label>
         <input type="number" name="bedrooms" required>
 
-        <label>Number of Bathrooms</label>
+        <label>Number of Bathrooms:</label>
         <input type="number" name="bathrooms" required>
       </div>
 
       <div>
-        <label>Square Inches</label>
+        <label>Square Inches:</label>
         <input type="number" name="insq" required>
       </div>
 
       <div>
-        <label>Address</label>
+        <label>Address:</label>
         <input type="street" name="street" placeholder="Street" required>
         <input type="city" name="city" placeholder="City" required>
         <input type="province" name="province" placeholder="Province" required>
@@ -50,12 +52,13 @@
       </div>
 
       <div class="listing-images">
-        <label for="thumbnail">Thumbnail image:</label>
+        <label for="thumbnail">Thumbnail Image:</label>
         <input type="url" name="thumbnail" placeholder="Enter image url" required>
       </div>
+    </div>
 
       <div>
-        <button type="submit">Create New Listing</button>
+        <button type="submit" class="btn btn-success">Create New Listing</button>
       </div>
     </form>
   </main>
