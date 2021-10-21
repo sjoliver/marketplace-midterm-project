@@ -29,6 +29,7 @@ app.use(cookieParser());
 app.set('view engine', "ejs");
 app.set('views');
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use(
   "/styles",
@@ -47,9 +48,12 @@ const indexRoutes = require("./routes/index");
 const listingsRoute = require("./routes/my-listings");
 const watchingRoute = require("./routes/watching");
 const usersRoutes = require("./routes/users");
+const newMessageRoutes = require("./routes/new-message");
 const messagesRoutes = require("./routes/messages");
 const messageShowRoutes = require("./routes/message-show");
+const messageApiRoutes = require("./routes/messages-api")
 const loginRoutes = require("./routes/login");
+const { application } = require("express");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -59,8 +63,11 @@ app.use("/listings", listingsRoute(db));
 app.use("/my-listings", listingsRoute(db));
 app.use("/watching", watchingRoute(db));
 app.use("/users", usersRoutes(db));
+app.use("/new-message", newMessageRoutes(db));
 app.use("/messages", messagesRoutes(db));
 app.use("/messages", messageShowRoutes(db));
+app.use("/api/messages", messageApiRoutes(db));
+// app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page

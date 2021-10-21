@@ -1,10 +1,9 @@
-<link rel="stylesheet" href="/styles/new-message.css" type="text/css" />
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <%- include('../partials/_head') %>
+  <link rel="stylesheet" href="/styles/new-message.css" type="text/css" />
   <title>New Message</title>
 </head>
 
@@ -14,7 +13,7 @@
   </nav>
 
   <main>
-    <form action="/submit-message" method="POST">
+    <form action="/new-message/<%= listing %>" method="POST">
       <div class="new-message-form">
         <div class="form-subject">
           <label>Subject:</label>
@@ -23,11 +22,11 @@
 
         <div class="form-body">
           <label>Input your message here:</label>
-          <textarea class="new-message-body" cols="50" rows="15"></textarea>
+          <textarea name="body" class="new-message-body" cols="50" rows="15"></textarea>
         </div>
       </div>
       <div class=new-message-button>
-        <button type="button">Send Message</button>
+        <button type="submit">Send Message</button>
       </div>
     </form>
   </main>
