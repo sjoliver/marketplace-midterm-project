@@ -13,16 +13,15 @@ header {
   margin: 0px auto;
   position: relative;
   width: 90%;
-  height: 100px;
+  height: 80px;
 }
 
 header h3 {
-  margin: 0px; padding: 50px 0px 0px;
+  margin: 0px; padding: 30px 0px 0px;
   font-size: 24px;
 }
 
 .messages-index {
-  margin: 0px auto -100px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -58,11 +57,13 @@ tr.message {
   display: flex;
   flex-direction: row;
   justify-content: start;
+  width: auto;
 
   .sender {
     color: #000;
     font-weight: bold;
     margin-right: 2em;
+    width: 20%;
   }
 
   .subject {
@@ -71,15 +72,19 @@ tr.message {
     display: flex;
     flex-wrap: wrap;
     white-space: nowrap;
+    margin-right: 20px;
+    width: 30%;
   }
 
   .body {
     display: flex;
     flex-wrap: wrap;
+    margin-right: 20px;
+    width: 50%;
   }
 
-  .date {
-    position: absolute;
-    right: 15px;
-  }
+  // .date {
+  //   position: absolute;
+  //   right: 15px;
+  // }
 }
