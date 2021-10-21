@@ -15,7 +15,6 @@ module.exports = (db) => {
 
     db.query(query, [email])
       .then((result) => {
-        console.log(result.rows)
         res.cookie('user_id', result.rows[0].id);
         res.redirect("/");
       })
