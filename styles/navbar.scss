@@ -6,15 +6,24 @@ nav {
   padding: 0 20px 0 20px;
   height: 120px;
   width: 100vw;
-  background-color: green;
-  color: #FFFFFF;
+  background-color: #006341;
+  color: #fefefe;
 }
 
 nav a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin: 1em;
   text-decoration: none;
-  color: #FFFFFF;
+  color: #fefefe;
 }
+
+nav a.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 48px;
+  color: #fefefe;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: #fefefe;
+}
+
