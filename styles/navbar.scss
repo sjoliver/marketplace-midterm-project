@@ -11,10 +11,19 @@ nav {
 }
 
 nav a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin: 1em;
   text-decoration: none;
   color: #fefefe;
 }
+
+nav a.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 48px;
+  color: #fefefe;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: #fefefe;
+}
+

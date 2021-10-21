@@ -4,30 +4,34 @@
 }
 
 .filter-box {
-  border-radius: 2%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin: 20px;
   align-items: center;
-  justify-content: center;
-  background-color: #f17d00;
-  width: 700px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  box-shadow: 2px 2px #888888;
+  padding: 0 0 0 20px;
+  border-radius: .8em;
+  background-color: #adc8bf;
+  font-family: 'Dosis', sans-serif;
 }
 
-.price-filter-label {
-  color: #fefefe;
-  font-size: 16px;
+.filter-box input {
+  margin: 0 20px 0 20px;
+  width: 100px;
+  font-size: 24px;
+  outline: none;
+  background-color: inherit;
 }
 
 .filter-box button {
   margin: 15px;
   padding: 5px;
+  font-size: 20px;
 }
 
-.filter-box label {
-  margin-left: 10px;
-  margin-right: 10px;
+.filter-box label{
+  padding-top: 10px;
+  font-size: 24px;
+  color: #212529;
 }
+
 

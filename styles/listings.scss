@@ -11,16 +11,16 @@ img {
 }
 
 .listing {
-  border-radius: 2%;
+  border-radius: .8em;
   display: flex;
   position: relative;
   float: left;
   width: 450px;
-  padding: 15px;
+  padding: 20px;
   height: 300px;
-  margin: 5px;
+  margin: 10px;
   align-items: center;
-  box-shadow: 2px 2px #888888;
+  box-shadow: 0 0 0 .4em #d9eae4;
   background-color: #fefefe;
 }
 
@@ -29,7 +29,7 @@ img {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  border-radius: 2%;
+  border-radius: .6em;
 }
 
 .listing div {
@@ -70,6 +70,7 @@ img {
   margin-top: 10px;
   margin-left: 10px;
 }
+
 
 .listing .description-layer {
   position: absolute;

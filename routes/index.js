@@ -11,7 +11,6 @@ module.exports = (db) => {
       .then(data => {
         const listings = data.rows;
         const userId = req.cookies.user_id;
-        console.log("listings", listings)
         res.render("pages/homepage", {listings, userId});
       })
       .catch(err => {
