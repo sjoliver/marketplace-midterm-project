@@ -3,8 +3,6 @@
 
 <head>
   <%- include('../partials/_head') %>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/scripts/messages.js"></script>
 </head>
 
 <body>
@@ -13,35 +11,38 @@
   </nav>
 
   <header>
+    <h4>Listing: <%= message.listing_name %></h4>
     <h4>Subject: <%= message.subject %></h4>
   </header>
 
   <main>
+    <section class="message-thread">
 
-    <!-- SENDER -->
+      <!-- SENDER -->
     <div class="container darker">
       <span class="sender right"><%= message.sender %></span>
       <p><%= message.message %></p>
       <span class="time-left">11:00 am</span>
     </div>
 
-    <!-- RECEIVER -->
-    <!-- <div class="container">
-      <span class="sender">Salziver</span>
-      <p>Hey there! Thanks for your interest in my listing, what can I tell you about the property?</p>
-      <span class="time-right">11:15 am</span>
-    </div> -->
+    </section>
 
     <!-- REPLY FORM -->
-    <form id="response-form" action="/messages/<%= message.id %>" method="POST">
+    <section class="new-reply">
+
+      <form id="response-form">
         <div class="form-body">
-          <textarea class="reply-message-body" cols="50" rows="15" placeholder="Reply"></textarea>
+          <textarea name="reply" class="reply-message-body" cols="50" rows="15" placeholder="Reply"></textarea>
         </div>
       </div>
-      <div class=send-message-button>
-        <button type="submit">Send</button>
+
+      <div class="send-message-button">
+        <button type="submit">Send Message</button>
       </div>
+
     </form>
+
+    </section>
 
   </main>
 

@@ -15,7 +15,6 @@ module.exports = (db) => {
 
     db.query(query, [email])
       .then((result) => {
-        console.log(result.rows)
         res.cookie('user_id', result.rows[0].id);
         res.redirect("/");
       })
@@ -23,13 +22,11 @@ module.exports = (db) => {
         res
           .status(500)
           .json({ error: error.message });
-      })
+      });
   })
 
   router.get('/', (req, res) => {
-
     res.render('pages/login');
-
   });
 return router
 };

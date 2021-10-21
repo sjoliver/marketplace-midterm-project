@@ -1,43 +1,31 @@
+const { request } = require('express');
 const express = require('express');
 const router  = express.Router();
 
-const app = express();
-app.use(express.static("public"));
-
 module.exports = (db) => {
 
-  router.post("/reply", (req, res) => {
-
-    const newReply = db.query(`
-      INSERT INTO messages (buyer_id, seller_id, subject, message, listing_id)
-      VALUES ()`)
-
-    res.json(newReply)
-  })
-
-  router.get("/reply", (req, res) => {
-    // retrieve that message info from your db and send it back using -> res.json(the single message)
-
-
-  })
-
   router.get("/:id", (req, res) => {
-    const messageID = req.params.id;
+    const threadId = req.params.id;
+    const currentUser = req.cookies['user_id'];
 
     let query = `
-      SELECT subject, message, messages.id, users.name as sender
-      FROM messages
-      JOIN users ON users.id = buyer_id
-      WHERE seller_id = 1
-        AND messages.id = $1
-      `;
+      SELECT threads.id, subject, message, messages.created_at, users.name as sender, users.id as user_id, listings.title as listing_name
+      FROM threads
+      JOIN messages ON threads.id = thread_id
+      JOIN thread_participants ON thread_participants.thread_id = threads.id
+      JOIN users ON users.id = sending_user_id
+      JOIN listings ON listings.id = listing_id
+      WHERE thread_participants.user_id = $1
+       AND threads.id = $2;
+    `
 
-    db.query(query, [messageID])
+    db.query(query, [currentUser, threadId])
       .then(response => {
-        let templateVars = { message: response.rows[0] };
+
+        let templateVars = { message: response.rows[0], threadId };
         res.render("pages/message-show", templateVars);
-      })
-      .catch((error) => console.log(error.message));
+
+      }).catch(error => console.log(error.message));
   });
 
 return router;

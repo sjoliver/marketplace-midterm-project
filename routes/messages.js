@@ -4,12 +4,17 @@ const router  = express.Router();
 module.exports = (db) => {
   router.get("/", (req, res) => {
     const userId = req.cookies['user_id']
+
     let query = `
-      SELECT subject, message, users.name as sender
-      FROM messages
-      JOIN users ON users.id = buyer_id
-      WHERE seller_id = $1
-      `;
+      SELECT threads.id, subject, message, created_at, users.name as sender
+      FROM threads
+      JOIN messages on threads.id = thread_id
+      JOIN thread_participants on thread_participants.thread_id = threads.id
+      JOIN users ON users.id = sending_user_id
+      WHERE thread_participants.user_id = $1
+      GROUP BY threads.id, subject, message, created_at, users.name
+      ORDER BY threads.id, created_at DESC;
+    `
 
     db.query(query, [userId])
       .then(response => {
