@@ -2,73 +2,73 @@
 
 $(document).ready(function () {
 
+  const threadId = window.location.href.split("/")[4]
+
   $("#response-form").on("submit", function(event) {
+
     event.preventDefault();
 
-    // const data = $(this).serialize();
+    const text = $('.reply-message-body').val();
 
-    // // error handling
-    // if (data === null || data === "text=") {
-    //   errorMessage = "Message cannot be empty, please enter text before sending.";
-    //   $('.error-message').text(errorMessage);
-    //   // $('#error-container').slideDown(400);
-    //   return;
-    // }
+    $.post(`/api/messages/${threadId}`, { text, threadId })
+      .then((result) => {
+        loadMessages();
 
-    // POST REQUEST: processing form submission
-    $.ajax({
-      url: '/messages/reply', // REFACTOR -- how do I get the message id param here??
-      method: 'POST',
-      dataType: 'text',
-      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-      data: $(this).serialize()
-    }).then((result) => {
-
-      console.log(result);
-
+        $('.reply-message-body').val('');
     }).catch((error) => {
 
       console.log(`there was an error: ${error}`);
 
     });
-
-    // clears textarea once user submits new tweet
-    $('.reply-message-body').val('');
   });
 
+  const loadMessages = function () {
 
-    $.ajax({
-      url:'/messages/reply', // REFACTOR -- how do I get the message id param here??
-      method: 'GET'
-    }).then((result) => {
-
-      console.log(result);
-
+    $.get(`/api/messages/${threadId}`)
+      .then((data) => {
+        renderMessages(data)
     }).catch((error) => {
-
       console.log(`there was an error: ${error}`);
-
     });
 
-  // // CREATE MESSAGE
-  // const createMessageElement = function (messageObject) {
+  };
 
-  //   const escape = function (str) {
-  //     let div = document.createElement("div");
-  //     div.appendChild(document.createTextNode(str));
-  //     return div.innerHTML;
-  //   };
+  loadMessages();
 
-  //   const createdTime = timeago.format(messageObject["created_at"])
+  const renderMessages = function (messages) {
 
-  //   const $message = `
-  //     <div class="container">
-  //       <span class="sender">${messageObject.sender}</span>
-  //       <p>${messageObject.message}</p>
-  //       <span class="time-right">${createdTime}/span>
-  //     </div>
-  //   `
-  //   return $message;
-  // }
+    const container = $('.message-thread');
+    container.empty();
+
+    // loop through messages
+    for (const message of messages) {
+
+      // calls createMessageElement for each tweet
+      const $message = createMessageElement(message);
+      container.append($message);
+
+    };
+  };
+
+  // CREATE MESSAGE
+  const createMessageElement = function (messageObject) {
+
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
+
+    const createdTime = timeago.format(messageObject["created_at"])
+
+    const $message = `
+      <div class="container">
+        <span class="sender">${messageObject.sender}</span>
+        <p>${escape(messageObject.message)}</p>
+        <span class="time-right">${createdTime}</span>
+      </div>
+    `
+    return $message;
+  }
 
 });
