@@ -7,7 +7,6 @@ img {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .listing {
@@ -20,11 +19,11 @@ img {
   height: 300px;
   margin: 10px;
   align-items: center;
-  box-shadow: 0 0 0 .4em #d9eae4;
-  background-color: #fefefe;
+  box-shadow: 0 0 0 .2em #d9eae4;
+  background-color: #d9eae4;
 }
 
-.listing img {
+.listing-img {
   margin: 0 15px 0 15px;
   width: 200px;
   height: 200px;
@@ -33,15 +32,7 @@ img {
 }
 
 .listing div {
-  display: flex;
   flex-direction: column;
-}
-
-.listing img {
-  object-fit: cover;
-  margin: 0 15px 0 15px;
-  width: 200px;
-  height: 200px;
 }
 
 .primary-info {
@@ -52,25 +43,25 @@ img {
 
 .listing-title {
   text-align: center;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
   color: #f17d00;
 }
 
 .listing-price {
   text-align: center;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   color: #006341;
+  margin-bottom: 20px;
 }
 
 .listing-addr {
   text-align: center;
   font-size: 14px;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-left: 10px;
 }
-
 
 .listing .description-layer {
   position: absolute;
@@ -78,8 +69,7 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(#FFA722, 0.95);
-  background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+  background: rgba(#Fea03b, 0.95);
   color: #fefefe;
   visibility: hidden;
   opacity: 0;
@@ -97,7 +87,7 @@ img {
 .listing:hover .description-layer {
   visibility: visible;
   opacity: 1;
-  box-shadow: 5px 5px #888888;
+  box-shadow: 5px 5px #d4d3d3;
   border-radius: 2%;
 }
 
@@ -116,6 +106,10 @@ img {
 
 .sold-img {
   position: absolute;
-  z-index: 99;
-
+  left: 0px;
 }
+
+.sqr-inches {
+  margin-top: 10px;
+}
+
