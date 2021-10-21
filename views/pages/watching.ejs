@@ -13,15 +13,13 @@
   </nav>
 
   <main class="main-container">
-    <div class="filter-box">
-      <form method="POST" action="/watching/byprice">
-          <label class="price-filter-label">Min Price:</label>
-            <input type="number" name="min">
-          <label class="price-filter-label">Max Price:</label>
-            <input type="number" name="max">
-          <button type="submit" class="btn btn-light btn-sm">Search</button>
-      </form>
-    </div>
+    <form method="POST" class="filter-box" action="/byprice">
+      <label class="price-filter-label">From</label>
+        <input type="number" name="min">
+      <label class="price-filter-label">To</label>
+        <input type="number" name="max">
+      <button type="submit" class="btn btn-light btn-sm">Search Price</button>
+  </form>
     <div class="listings-box">
       <div class="listings">
         <% for (let listing of listings) { %>

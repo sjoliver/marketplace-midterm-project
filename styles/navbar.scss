@@ -1,25 +1,51 @@
 nav {
   display: flex;
-  align-items: center;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+  font-family: 'Andada Pro', serif;
+  font-size: 24px;
   padding: 0 20px 0 20px;
-  height: 120px;
-  width: 100vw;
+  height: 130px;
   background-color: #006341;
   color: #fefefe;
 }
 
+nav div {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-left: 300px;
+}
+
 nav a {
-  margin: 1em;
   text-decoration: none;
   color: #fefefe;
 }
 
-nav a.navbar-brand {
+nav a.gnome-logo {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  padding: 10px 0 0 0;
   font-family: 'Cinzel', serif;
-  font-size: 48px;
   color: #fefefe;
+}
+
+nav a p {
+  font-size: 48px;
+  position: absolute;
+}
+
+nav a p.small {
+  position: absolute;
+  margin: 50px 0 0 20px;
+  font-size: 24px;
+}
+
+#second-gnome {
+  position: absolute;
+  margin: 50px 0 0 100px;
+  font-size: 48px;
 }
 
 nav a:hover {
