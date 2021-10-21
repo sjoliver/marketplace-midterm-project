@@ -4,7 +4,9 @@ const router  = express.Router();
 module.exports = (db) => {
 
   router.get("/:listing", (req, res) => {
-    const listing = req.params.listing;
+    console.log(req.params.listing);
+
+    const listing = Number(req.params.listing);
 
     res.render('pages/new-message', { listing })
   })

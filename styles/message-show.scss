@@ -12,18 +12,19 @@ section.message-thread {
   margin: 10px;
   width: 70%;
   height: 5em;
+  flex-direction: column;
 }
 
 .lighter {
   display: flex;
   align-self: start;
-  align-content: left;
+  justify-content: flex-end;
 }
 
 .darker {
   display: flex;
   align-self: end;
-  align-content: right;
+  justify-content: flex-start;
 }
 
 .sender {
