@@ -13,26 +13,33 @@
   </nav>
 
   <main class="main-container">
-    <div class="filter-box">
-      <form method="POST" action="/watching/byprice">
-          <label class="price-filter-label">Min Price:</label>
-            <input type="number" name="min">
-          <label class="price-filter-label">Max Price:</label>
-            <input type="number" name="max">
-          <button type="submit" class="btn btn-light btn-sm">Search</button>
-      </form>
-    </div>
+    <form method="POST" class="filter-box" action="/byprice">
+      <label class="price-filter-label">From</label>
+        <input type="number" name="min">
+      <label class="price-filter-label">To</label>
+        <input type="number" name="max">
+      <button type="submit" class="btn btn-light btn-sm">Search Price</button>
+  </form>
     <div class="listings-box">
       <div class="listings">
         <% for (let listing of listings) { %>
           <div class="listing">
-            <img src="<%= listing.image_thumbnail %>" alt="gnome-home">
-            <div class="title-and-primary">
-              <div class="listing-title"><%= listing.title %></div>
-              <div class="listing-price">$<%= listing.asking_price %></div>
-              <div class="primary-info"><%= listing.num_of_bedrooms %> bedrooms, <%= listing.num_of_bathrooms %> bathrooms, <%= listing.sqr_inches %> square inches
+            <img class="listing-img" src="<%= listing.image_thumbnail %>" alt="gnome-home">
+            <div>
+              <div class="listing-title"><%= listing.title %>
               </div>
-              <div class="listing-addr"><u>Address:</u> <%= listing.street %>, <%= listing.city %>, <%= listing.province %>, <%= listing.post_code %>, <%= listing.country %>
+              <div class="listing-price">$<%= listing.asking_price %>
+              </div>
+              <div class="primary-info">
+                <i class="fa-solid fa-bed"></i>
+                <%= listing.num_of_bedrooms %> beds
+                <i class="fa-solid fa-toilet"></i> <%= listing.num_of_bathrooms %> bathrooms
+              <div class="sqr-inches">
+                <i class="fa-solid fa-house-chimney"></i>
+                <%= listing.sqr_inches %> sq. in.
+              </div>
+              </div>
+              <div class="listing-addr"><i class="fa-solid fa-location-dot"></i> <%= listing.street %>, <%= listing.city %>, <%= listing.province %>, <%= listing.post_code %>, <%= listing.country %>
               </div>
             </div>
             <div class="description-layer">
