@@ -12,41 +12,22 @@
   </nav>
 
   <main>
-    <div class="new-primary-info">
-      <form name="new-listing" action="/my-listings/new" method="POST">
-        <input type="title" name="title" placeholder="Title" required>
-
-        <textarea name="description" cols="30" rows="10" placeholder="Enter description" required></textarea>
-
-        <input type="number" name="price" placeholder="Asking price" required>
-
-        <input type="number" name="bedrooms" placeholder="Number of bedrooms" required>
-
-        <input type="number" name="bathrooms" placeholder="Number of bathrooms" required>
-
-      <div>
-        <label>Square Inches:</label>
-        <input type="number" name="insq" required>
-      </div>
-
-      <div>
-        <label>Address:</label>
+    <form class="create-primary-info" name="new-listing" action="/my-listings/new" method="POST">
+      <input type="title" name="title" placeholder="Title" required>
+      <textarea name="description" cols="30" rows="10" placeholder="Enter description" required></textarea>
+      <input type="number" name="price" placeholder="Asking price" required>
+      <input type="number" name="bedrooms" placeholder="Number of bedrooms" required>
+      <input type="number" name="bathrooms" placeholder="Number of bathrooms" required>
+      <input type="number" name="insq" placeholder="Square inchage" required>
+      <div class="address">
         <input type="street" name="street" placeholder="Street" required>
         <input type="city" name="city" placeholder="City" required>
         <input type="province" name="province" placeholder="Province" required>
-        <input type="postcode" name="postcode" placeholder="Postal Code" required>
+        <input type="postcode" name="postcode" placeholder="Postal code" required>
         <input type="country" name="country" placeholder="Country" required>
       </div>
-
-      <div class="listing-images">
-        <label for="thumbnail">Thumbnail Image:</label>
-        <input type="url" name="thumbnail" placeholder="Enter image url" required>
-      </div>
-    </div>
-
-      <div>
-        <button type="submit" class="btn btn-success">Create New Listing</button>
-      </div>
+      <input class="img-url-field" type="url" name="thumbnail" placeholder="Enter image url" required>
+      <button type="submit" class="btn btn-light">Create New Listing</button>
     </form>
   </main>
 
