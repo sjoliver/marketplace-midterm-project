@@ -119,10 +119,12 @@ img {
   color: #404442;
 }
 
-
-
 .sold-img {
-  position: absolute;
+  position: absolute;  display: flex;
+  flex-direction: row;
+  margin: 20px 10px 20px 20px;
+  align-items: center;
+  padding: 0 0 0 20px;
   left: 0px;
 }
 
