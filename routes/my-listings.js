@@ -11,6 +11,7 @@ module.exports = (db) => {
       SELECT *
       FROM listings
       WHERE seller_id = $1
+      ORDER BY listings.id DESC
     ;`;
     db.query(queryString, [userId])
       .then(data => {
@@ -49,6 +50,7 @@ module.exports = (db) => {
       WHERE seller_id = $1
         AND asking_price >= $2
         AND asking_price <= $3
+      ORDER BY listings.id DESC
     ;`;
     db.query(queryString, values)
       .then(data => {

@@ -6,6 +6,7 @@ module.exports = (db) => {
     let query = `
       SELECT *
       FROM listings
+      ORDER BY listings.id DESC
       ;`;
     db.query(query)
       .then(data => {
@@ -41,6 +42,7 @@ module.exports = (db) => {
       FROM listings
       WHERE asking_price >= $1
         AND asking_price <= $2
+      ORDER BY listings.id DESC
     ;`;
     db.query(queryString, values)
       .then(data => {
@@ -63,7 +65,7 @@ module.exports = (db) => {
     let getQuery =
     `SELECT * FROM favourites
     WHERE buyer_id = $1
-    AND listing_id = $2;
+    AND listing_id = $2
     `;
 
     db.query(getQuery, values)
