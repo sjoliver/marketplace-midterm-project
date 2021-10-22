@@ -8,8 +8,6 @@ img {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  justify-content: center;
-  font-family: 'Andada Pro', serif;
 }
 
 .listing {
@@ -39,11 +37,6 @@ img {
   flex-direction: column;
 }
 
-.primary-info {
-  text-align: center;
-  margin-left: 10px;
-  margin-top: 10px;
-}
 
 .listing-title {
   text-align: center;
@@ -111,20 +104,77 @@ img {
 .create-listing-button {
   padding: 15px;
   border-radius: .8em .8em .8em 0;
-  background-color: #adc8bf;
-  font-family: 'Andada Pro', serif;
+  box-shadow: 0 0 0 .05em #006341;
+  background-color: #eff8f5;
   margin: 15px;
 }
 
 .create-listing-button button {
   font-size: 18px;
   color: #404442;
+  border: .06em #657676 solid;
+}
+
+.primary-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-primary-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 700px;
+  border-radius: .8em .8em .8em 0;
+  box-shadow: 0 0 0 .4em #d9eae4;
+  padding-top: 50px;
+  margin: 50px 0 50px 0;
+}
+
+.create-primary-info input {
+  margin: 10px 10px 10px 10px;
+  font-size: 24px;
+  outline: none;
+  background-color: inherit;
+  border-bottom: 1px #657676 solid;
+}
+
+.create-primary-info input.img-url-field {
+  padding-right: 100px;
+}
+
+.create-primary-info textarea {
+  margin: 10px 10px 10px 10px;
+  resize: none;
+  font-size: 24px;
+  outline: none;
+  background-color: inherit;
+  border-bottom: 1px #657676 solid;
+}
+
+.create-primary-info .address {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 80px;
+  margin: 10px 0 10px 0;
+}
+
+.create-primary-info button {
+  border: .06em #657676 solid;
+  margin: 40px;
+  padding: 5px;
+  font-size: 24px;
+  color: #404442;
 }
 
 
-
 .sold-img {
-  position: absolute;
+  position: absolute;  display: flex;
+  flex-direction: row;
+  margin: 20px 10px 20px 20px;
+  align-items: center;
+  padding: 0 0 0 20px;
   left: 0px;
 }
 
