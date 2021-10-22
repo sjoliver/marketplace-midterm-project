@@ -13,7 +13,7 @@ module.exports = (db) => {
       JOIN users ON users.id = sending_user_id
       WHERE thread_participants.user_id = $1
       GROUP BY threads.id, subject, message, created_at, users.name
-      ORDER BY threads.id, created_at DESC;
+      ORDER BY threads.id DESC, created_at DESC;
     `
 
     db.query(query, [userId])

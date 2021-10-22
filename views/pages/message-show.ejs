@@ -10,41 +10,36 @@
     <%- include('../partials/_navbar') %>
   </nav>
 
-  <header class="message-show-header">
-    <h4>Listing: <%= message.listing_name %></h4>
-    <h4>Subject: <%= message.subject %></h4>
-  </header>
+  <div class="thread-container">
+    <header class="message-show-header">
+      <h7><em>Listing: <%= message.listing_name %></em></h7>
+      <h5><b>Subject: <%= message.subject %></b></h5>
+    </header>
 
-  <main>
-    <section class="message-thread">
-
-      <!-- SENDER -->
-    <div class="container darker">
-      <span class="sender right"><%= message.sender %></span>
-      <p><%= message.message %></p>
-      <span class="time-left">11:00 am</span>
-    </div>
-
-    </section>
-
-    <!-- REPLY FORM -->
-    <section class="new-reply">
-
-      <form id="response-form">
-        <div class="form-body">
-          <textarea name="reply" class="reply-message-body" cols="50" rows="15" placeholder="Reply"></textarea>
+    <main>
+      <section class="message-thread">
+        <!-- INITAL SENDER -->
+        <div class="container darker">
+          <span class="sender right"><%= message.sender.split(" ")[0] %></span>
+          <p><%= message.message %></p>
         </div>
-      </div>
+      </section>
 
-      <div class="send-message-button">
-        <button type="submit">Send Message</button>
-      </div>
+      <!-- REPLY FORM -->
+      <section class="new-reply">
+        <form id="response-form">
+          <div class="form-body">
+            <textarea name="reply" class="reply-message-body" placeholder="Reply"></textarea>
+          </div>
 
-    </form>
+          <div class="send-message-button">
+            <button type="submit" class="btn btn-primary btn-sm">Send Message</button>
+          </div>
+        </form>
+      </section>
 
-    </section>
-
-  </main>
+    </main>
+  </div>
 
 <footer>
   <%- include('../partials/_footer') %>
