@@ -3,12 +3,14 @@ header.message-show-header {
   background: #eee;
   border: 0.5px solid #adc8bf;
   padding-left: 2em;
-  padding-top: 1em;
+  padding-top: 1.5em;
   color: #006341;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  font-family: 'Andada Pro', serif;
+  font-weight: bold;
 }
 
 section.message-thread {
@@ -18,6 +20,7 @@ section.message-thread {
   background: #fefefe;
   padding-top: 1em;
   padding-bottom: 1em;
+  font-size: 16px;
 }
 
 .message {
@@ -26,8 +29,10 @@ section.message-thread {
   border-radius: 5px;
   margin: 10px;
   width: fit-content;
-  height: 5em;
+  height: 5.3em;
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 1em;
 }
 
@@ -36,7 +41,7 @@ section.message-thread {
   align-self: start;
   justify-content: flex-end;
   border-radius: 16px 16px 16px 0;
-  margin-left: 4em;
+  margin-left: 2em;
   align-items: center;
   justify-content: flex-start;
 }
@@ -46,23 +51,32 @@ section.message-thread {
   align-self: end;
   justify-content: flex-start;
   border-radius: 16px 16px 0px 16px;
-  margin-right: 4em;
+  margin-right: 2em;
   align-items: center;
   justify-content: flex-start;
 }
 
-.sender {
+span.sender {
   width: 100%;
-  // border-radius: 50%;
   color: #369775;
   font-weight: bold;
+  margin-bottom: 0.5em;
 }
 
 .reply-message-body {
   resize: none;
-  flex: 1;
   width: 100%;
   background: #d9eae4;
+  border-left: 2em;
+  height: 3.2em;
+  padding-left: 16px;
+  padding-top: 8px;
+}
+
+textarea.reply-message-body:focus {
+  outline: none;
+  border-color: #369775;
+  box-shadow: 0 0 4px #369775;
 }
 
 section.new-reply {
@@ -72,6 +86,8 @@ section.new-reply {
 
 div.form-body {
   width: 100%;
+  margin-top: 0.3em;
+  margin-left: 1em;
 }
 
 #response-form {
@@ -82,10 +98,10 @@ div.form-body {
 }
 
 #response-form * {
-  padding: 10px;
+  padding-top: 12px;
+  padding-bottom: 10px;
   border: none;
   border-radius: 3px;
-  font-size: 1em;
 }
 
 .time-left {
@@ -104,16 +120,21 @@ div.form-body {
   display: table;
 }
 
-.send-btn {
+div.send-message-button {
   margin-left: 10px;
+  margin-right: 10px;
+}
+
+#send-btn {
   background: #369775;
   color: #fff;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.23s;
+  width: 4.5em;
 }
 
-.send-btn:hover {
+#send-btn:hover {
   background: #006341;
 }
 

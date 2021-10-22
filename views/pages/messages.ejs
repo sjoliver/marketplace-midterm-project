@@ -29,10 +29,9 @@
                   <td class="subject"><%= messageObj.subject %> -- </td>
                   <td class="body"> <%= messageObj.message %></td>
                 </div>
-                <td>
-                    <a href="/messages/<%= messageObj.id %>" class="btn btn-outline-primary btn-sm">View</a>
-                </td>
-              </tr>
+                <div class="view-message-button"></div>
+                  <td><a href="/messages/<%= messageObj.id %>" class="btn btn-primary btn-sm" id="view-btn">View</a></td>
+                </div>
                 <% previousId = messageObj.id %>
               <% } %>
             <% } %>
