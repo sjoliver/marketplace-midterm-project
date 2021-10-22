@@ -1,29 +1,38 @@
 section.message-thread {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
+  background: #d9eae4;
 }
 
 .message {
   border: 2px solid #dedede;
   background-color: #f1f1f1;
   border-radius: 5px;
-  padding: 10px;
   margin: 10px;
-  width: 70%;
+  width: fit-content;
   height: 5em;
   flex-direction: column;
+  padding: 1em;
 }
 
 .lighter {
   display: flex;
   align-self: start;
   justify-content: flex-end;
+  border-radius: 16px 16px 16px 0;
+  margin-left: 4em;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .darker {
   display: flex;
   align-self: end;
+  justify-content: flex-start;
+  border-radius: 16px 16px 0px 16px;
+  margin-right: 4em;
+  align-items: center;
   justify-content: flex-start;
 }
 
@@ -31,12 +40,29 @@ section.message-thread {
   width: 100%;
   margin-right: 20px;
   border-radius: 50%;
+  color: #369775;
+  font-weight: bold;
 }
 
-.right {
-  margin-left: 20px;
-  margin-right: 0;
-  align-content: right;
+.message-show-header {
+  margin: 50px 50px 20px 50px;
+}
+
+textarea.reply-message-body {
+  resize: none;
+  height: 3em;
+  width: 25em;
+}
+
+section.new-reply {
+  width: 90%;
+}
+
+#response-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .time-left {
@@ -53,8 +79,4 @@ section.message-thread {
   content: "";
   clear: both;
   display: table;
-}
-
-.message-show-header {
-  margin: 50px 50px 20px 50px;
 }

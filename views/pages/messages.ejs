@@ -25,13 +25,12 @@
               <% if (messageObj.id !== previousId) { %>
               <tr class="message">
                 <td class="sender"><%= messageObj.sender %></td>
-                <td class="subject"><%= messageObj.subject %>--</td>
-                <td class="body"><%= messageObj.message %></td>
-                <!-- <td class="date"><%= messageObj.created_at %></td> -->
+                <div class="subject-body">
+                  <td class="subject"><%= messageObj.subject %> -- </td>
+                  <td class="body"> <%= messageObj.message %></td>
+                </div>
                 <td>
-                  <form method="GET" action="/messages/<%= messageObj.id %>">
-                    <button type="submit" class="btn btn-light btn-sm">View</button>
-                  </form>
+                    <a href="/messages/<%= messageObj.id %>" class="btn btn-outline-primary btn-sm">View</a>
                 </td>
               </tr>
                 <% previousId = messageObj.id %>
