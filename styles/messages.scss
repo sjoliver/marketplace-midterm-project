@@ -21,6 +21,8 @@ header {
   padding-bottom: 1em;
   color: #006341;
   width: 100%;
+  font-family: 'Andada Pro', serif;
+  font-weight: bold;
 }
 
 header h3 {
@@ -40,10 +42,13 @@ header h3 {
 }
 
 #search {
+  border: none;
   display: flex;
   justify-content: right;
   margin-bottom: 10px;
-  padding: 5px 10px;
+  padding: 15px;
+  margin: 10px;
+  height: 2.3em;
   background: #EEE;
   border-radius: 5px;
 
@@ -53,27 +58,39 @@ header h3 {
 }
 
 tr.message {
-  clear: both;
-  margin-bottom: 5px;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  padding-bottom: 7px;
+  padding-top: 7px;
   padding-right: 1em;
   padding-left: 1em;
   background: #d9eae4;
-  // border-color: #9ec2b5;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: auto;
-  height: 3em;
+  height: auto;
   align-content: center;
+  position: relative;
 
-  .sender {
+  td.sender {
     color: #000;
     font-weight: bold;
-    margin-right: 2em;
+    // margin-right: 2em;
     width: 20%;
+  }
+
+  td:nth-child(1) {
+    text-align: left;
+    flex-grow: 2;
+  }
+
+  td:nth-child(2) {
+    text-align: left;
+  }
+
+  td:nth-child(3) {
+    text-align: left;
+    flex-grow:10;
   }
 
   .subject {
@@ -82,8 +99,16 @@ tr.message {
     display: flex;
     flex-wrap: wrap;
     white-space: nowrap;
-    margin-right: 20px;
     width: 30%;
+    text-align: left;
+  }
+
+  .sender, .subject, .body {
+    padding-top: 10px;
+  }
+
+  .subject, .body {
+    width: max-content;
   }
 
   .body {
@@ -96,20 +121,28 @@ tr.message {
 
   .subject-body {
     display: flex;
-    justify-content: space-around;
+    gap: 5px;
   }
 
-  .send-btn {
+  div.view-message-button {
     margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+  }
+
+  #view-btn {
+    border-color: #369775;
     background: #369775;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.23s;
+    width: 4.5em;
   }
 
-  .send-btn:hover {
+  #view-btn:hover {
     background: #006341;
   }
+
 
 }

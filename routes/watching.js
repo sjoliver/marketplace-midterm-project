@@ -52,7 +52,7 @@ module.exports = (db) => {
       WHERE buyer_id = $1
         AND asking_price >= $2
         AND asking_price <= $3
-      ORDER BY listings.id DESC
+      ORDER BY l.id DESC
     ;`;
     db.query(queryString, values)
       .then(data => {

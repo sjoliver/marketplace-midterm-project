@@ -11,13 +11,21 @@
     <%- include('../partials/_navbar') %>
   </nav>
 
-  <main class="login-page-main">
-  <h1>Login</h1>
-  <form class="create-primary-info" method="POST" action="/login">
-    <input name="email" type="email" placeholder="Email"/>
-    <input name="password" type="password" placeholder="Password"/>
-    <button type="submit" class="btn btn-light btn-sm">Enter</button>
-  </form>
+  <main style="margin: 1em;">
+    <div class="login">
+      <h1>Login</h1>
+
+      <form method="POST" action="/login">
+        <label class="input-label">Email address</label>
+        <input name="email" type="text"/>
+        <br>
+        <label class="input-label">Password</label>
+        <input name="password" type="password"/>
+        <br>
+        <button type="submit" class="btn btn-primary btn-sm" id="login-btn">Login</button>
+      </form>
+
+    </div>
   </main>
    <!-- Bootstrap JS
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
