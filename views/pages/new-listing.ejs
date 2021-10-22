@@ -13,29 +13,16 @@
 
   <main>
     <div class="new-primary-info">
-    <form name="new-listing" action="/my-listings/new" method="POST">
-      <div>
-        <label>Title:</label>
+      <form name="new-listing" action="/my-listings/new" method="POST">
         <input type="title" name="title" placeholder="Title" required>
-      </div>
-      <div>
-        <label>Description:</label>
+
         <textarea name="description" cols="30" rows="10" placeholder="Enter description" required></textarea>
-      </div>
-      <div>
-        <label>Asking Price:</label>
-        <input type="number" name="price" required>
-      </div>
-    </div>
 
-    <div class="new-secondary-info">
-      <div>
-        <label>Number of Bedrooms:</label>
-        <input type="number" name="bedrooms" required>
+        <input type="number" name="price" placeholder="Asking price" required>
 
-        <label>Number of Bathrooms:</label>
-        <input type="number" name="bathrooms" required>
-      </div>
+        <input type="number" name="bedrooms" placeholder="Number of bedrooms" required>
+
+        <input type="number" name="bathrooms" placeholder="Number of bathrooms" required>
 
       <div>
         <label>Square Inches:</label>
