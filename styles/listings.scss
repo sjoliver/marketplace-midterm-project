@@ -6,6 +6,7 @@ img {
 .listings {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
   justify-content: center;
   font-family: 'Andada Pro', serif;
@@ -106,6 +107,21 @@ img {
   margin-right: 20px;
   margin-top: 10px;
 }
+
+.create-listing-button {
+  padding: 15px;
+  border-radius: .8em .8em .8em 0;
+  background-color: #adc8bf;
+  font-family: 'Andada Pro', serif;
+  margin: 15px;
+}
+
+.create-listing-button button {
+  font-size: 18px;
+  color: #404442;
+}
+
+
 
 .sold-img {
   position: absolute;
