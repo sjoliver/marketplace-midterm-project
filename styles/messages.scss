@@ -10,10 +10,14 @@ body {
 }
 
 header {
-  margin: 0px auto;
-  position: relative;
-  width: 90%;
-  height: 80px;
+  border-bottom: var(--border);
+  background: #eee;
+  border: 0.5px solid #adc8bf;
+  padding-left: 2em;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
+  color: #006341;
+  width: 100%;
 }
 
 header h3 {
@@ -26,7 +30,7 @@ header h3 {
   display: flex;
   flex-direction: column;
 
-  background: #adc8bf;
+  background: #fefefe;
   border-radius: 0px 5px 0px 0px;
   width: 100%;
   padding: 10px 10px 10px 10px;
@@ -53,7 +57,7 @@ tr.message {
   padding-right: 1em;
   padding-left: 1em;
   background: #d9eae4;
-  border-color: #9ec2b5;
+  // border-color: #9ec2b5;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
@@ -93,11 +97,16 @@ tr.message {
   }
 
   .btn-sm {
-    height: 1.7em;
-    align-items: center;
+    margin-left: 10px;
+    background: #369775;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.23s;
   }
 
-  // .view-thread {
+  .btn-sm:hover {
+    background: #006341;
+  }
 
-  // }
 }
