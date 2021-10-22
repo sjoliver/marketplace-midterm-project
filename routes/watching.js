@@ -11,6 +11,7 @@ module.exports = (db) => {
         INNER JOIN favourites AS f ON f.listing_id = l.id
         INNER JOIN users AS u ON u.id = f.buyer_id
       WHERE buyer_id = $1
+      ORDER BY l.id DESC
     ;`;
     db.query(queryString, userId)
       .then(data => {
@@ -51,6 +52,7 @@ module.exports = (db) => {
       WHERE buyer_id = $1
         AND asking_price >= $2
         AND asking_price <= $3
+      ORDER BY listings.id DESC
     ;`;
     db.query(queryString, values)
       .then(data => {

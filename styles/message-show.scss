@@ -1,42 +1,91 @@
+header.message-show-header {
+  border-bottom: var(--border);
+  background: #eee;
+  border: 0.5px solid #adc8bf;
+  padding-left: 2em;
+  padding-top: 1em;
+  color: #006341;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 section.message-thread {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
+  background: #fefefe;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .message {
   border: 2px solid #dedede;
-  background-color: #f1f1f1;
+  background-color: #d9eae4;
   border-radius: 5px;
-  padding: 10px;
   margin: 10px;
-  width: 70%;
+  width: fit-content;
   height: 5em;
   flex-direction: column;
+  padding: 1em;
 }
 
 .lighter {
   display: flex;
   align-self: start;
   justify-content: flex-end;
+  border-radius: 16px 16px 16px 0;
+  margin-left: 4em;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .darker {
   display: flex;
   align-self: end;
   justify-content: flex-start;
+  border-radius: 16px 16px 0px 16px;
+  margin-right: 4em;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .sender {
   width: 100%;
-  margin-right: 20px;
-  border-radius: 50%;
+  // border-radius: 50%;
+  color: #369775;
+  font-weight: bold;
 }
 
-.right {
-  margin-left: 20px;
-  margin-right: 0;
-  align-content: right;
+.reply-message-body {
+  resize: none;
+  flex: 1;
+  width: 100%;
+  background: #d9eae4;
+}
+
+section.new-reply {
+  width: 100%;
+  border: 0.5px solid #adc8bf;
+}
+
+div.form-body {
+  width: 100%;
+}
+
+#response-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#response-form * {
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 1em;
 }
 
 .time-left {
@@ -55,6 +104,16 @@ section.message-thread {
   display: table;
 }
 
-.message-show-header {
-  margin: 50px 50px 20px 50px;
+.send-btn {
+  margin-left: 10px;
+  background: #369775;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.23s;
 }
+
+.send-btn:hover {
+  background: #006341;
+}
+
