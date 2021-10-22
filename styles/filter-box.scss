@@ -9,8 +9,9 @@
   margin: 20px 10px 20px 20px;
   align-items: center;
   padding: 0 0 0 20px;
+  box-shadow: 0 0 0 .05em #006341;
   border-radius: .8em .8em .8em .8em;
-  background-color: #adc8bf;
+  background-color: #eff8f5;
   font-family: 'Andada Pro', serif;
 }
 
@@ -20,7 +21,7 @@
 
 .filter-box input {
   margin: 0 10px 0 10px;
-  width: 100px;
+  width: 150px;
   font-size: 20px;
   outline: none;
   background-color: inherit;
@@ -28,6 +29,7 @@
 }
 
 .filter-box button {
+  border: .06em #657676 solid;
   margin: 15px;
   padding: 5px;
   font-size: 18px;
