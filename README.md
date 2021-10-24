@@ -4,7 +4,7 @@ Midterm Project
 Gnome Sweet Gnome is a multi-page application for buying & selling real estate listings. Users can browse existing listings, create new listings, and more! 
 
 ### Features: 
-- Browse listings
+- Browse all listings
 - Filter listings by min and max price
 - Create new listings
 - Add listings to your Watching list
